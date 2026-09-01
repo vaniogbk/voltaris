@@ -19,10 +19,23 @@ import type { ProductSeed } from './seed-data/types.js';
 
 const prisma = new PrismaClient();
 
+const DEFAULT_ADMIN_PASSWORD = 'ChangeMoi!2026';
+
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? 'admin@stihl-market.eu';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? 'ChangeMoi!2026';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? DEFAULT_ADMIN_PASSWORD;
 
 async function seedAdmin() {
+  // Ce mot de passe par défaut est écrit ici, dans un dépôt public : le
+  // connaître ne demande aucun effort. Il dépanne en local, il ouvrirait le
+  // backoffice à n'importe qui en ligne. On refuse donc de créer le compte
+  // plutôt que d'en créer un dont tout le monde a la clé.
+  if (process.env.NODE_ENV === 'production' && ADMIN_PASSWORD === DEFAULT_ADMIN_PASSWORD) {
+    throw new Error(
+      'ADMIN_PASSWORD est absent ou vaut la valeur par défaut, qui est publique. ' +
+        'Définissez ADMIN_PASSWORD dans les variables du service avant de lancer le seed.',
+    );
+  }
+
   const passwordHash = await bcrypt.hash(ADMIN_PASSWORD, 12);
   const admin = await prisma.user.upsert({
     where: { email: ADMIN_EMAIL.toLowerCase() },
@@ -214,7 +227,7 @@ async function main() {
 
   console.log('─'.repeat(40));
   console.log(`Connexion admin : ${ADMIN_EMAIL}`);
-  if (ADMIN_PASSWORD === 'ChangeMoi!2026') {
+  if (ADMIN_PASSWORD === DEFAULT_ADMIN_PASSWORD) {
     console.log('⚠️  Mot de passe admin par défaut — changez-le avant la mise en production.');
   }
   console.log('');
