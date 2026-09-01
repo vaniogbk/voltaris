@@ -1,0 +1,264 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --header-height: 4.5rem;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-canvas text-ink antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'tnum';
+  }
+
+  /* Un seul style de focus dans toute l'interface. Le thème étant clair
+     partout, l'anneau se détache toujours sur le même fond. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-signal ring-offset-2 ring-offset-white;
+  }
+
+  ::selection {
+    @apply bg-signal text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-semibold tracking-tight text-balance;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-content px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ---------------------------------------------------------- boutons */
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg text-sm font-semibold
+           transition-all duration-150 disabled:pointer-events-none disabled:opacity-45;
+  }
+
+  .btn-md {
+    @apply h-11 px-5;
+  }
+  .btn-lg {
+    @apply h-13 px-7 text-base;
+  }
+  .btn-sm {
+    @apply h-9 px-3.5 text-[0.8125rem];
+  }
+
+  .btn-primary {
+    @apply bg-signal text-white shadow-sm hover:bg-signal-hover
+           active:translate-y-px active:shadow-none;
+  }
+
+  .btn-dark {
+    @apply bg-ink text-white hover:bg-ink-soft active:translate-y-px;
+  }
+
+  .btn-outline {
+    @apply border border-smoke-300 bg-white text-ink hover:border-ink hover:bg-canvas-raised
+           active:translate-y-px;
+  }
+
+  /* Bouton d'action compact posé sur une carte produit : discret au repos,
+     franc au survol. Sert à l'ajout au panier depuis les listes. */
+  .btn-quick {
+    @apply inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg
+           border border-smoke-300 bg-white text-ink transition-all duration-150
+           hover:border-signal hover:bg-signal hover:text-white
+           active:translate-y-px disabled:pointer-events-none disabled:opacity-40;
+  }
+
+  .btn-ghost {
+    @apply text-ink hover:bg-smoke-100;
+  }
+
+  /* ---------------------------------------------------------- champs */
+
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-ink;
+  }
+
+  .field {
+    @apply block h-11 w-full rounded-lg border border-smoke-300 bg-white px-3.5 text-sm
+           text-ink placeholder:text-smoke-400
+           focus:border-signal focus:outline-none focus:ring-2 focus:ring-signal/25
+           disabled:bg-smoke-100 disabled:text-smoke-500;
+  }
+
+  textarea.field {
+    @apply h-auto min-h-[6rem] py-2.5 leading-relaxed;
+  }
+
+  select.field {
+    @apply cursor-pointer appearance-none bg-[length:1rem] bg-[right_0.75rem_center] bg-no-repeat pr-10;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2374777E' stroke-width='1.75' stroke-linecap='round'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  }
+
+  .field-error {
+    @apply border-signal focus:border-signal focus:ring-signal/25;
+  }
+
+  .field-hint {
+    @apply mt-1.5 text-xs leading-relaxed text-smoke-500;
+  }
+
+  .field-message {
+    @apply mt-1.5 text-xs font-medium text-signal;
+  }
+
+  /* ---------------------------------------------------------- cartes */
+
+  .card {
+    @apply rounded-card border border-smoke-200 bg-white shadow-card;
+  }
+
+  .card-interactive {
+    @apply card transition-all duration-200 hover:-translate-y-0.5 hover:border-smoke-300 hover:shadow-card-hover;
+  }
+
+  /* ---------------------------------------------------------- badges */
+
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-2xs font-bold uppercase;
+  }
+
+  .badge-signal {
+    @apply badge bg-signal text-white;
+  }
+  .badge-dark {
+    @apply badge bg-ink text-white;
+  }
+  .badge-outline {
+    @apply badge border border-smoke-300 bg-white text-smoke-600;
+  }
+  .badge-soft {
+    @apply badge bg-smoke-100 text-smoke-600;
+  }
+
+  /* ---------------------------------------------------------- divers */
+
+  .eyebrow {
+    @apply text-2xs font-bold uppercase tracking-[0.14em] text-signal;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden bg-smoke-100;
+  }
+
+  .skeleton::after {
+    @apply absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r
+           from-transparent via-white/70 to-transparent;
+    content: '';
+  }
+
+  /* Contenu long rendu depuis le markdown des fiches produit. */
+  .rich-text {
+    @apply text-[0.9375rem] leading-relaxed text-smoke-600;
+  }
+  .rich-text > * + * {
+    @apply mt-4;
+  }
+  .rich-text h3 {
+    @apply mt-8 text-base font-semibold text-ink;
+  }
+  .rich-text strong {
+    @apply font-semibold text-ink;
+  }
+  .rich-text ul {
+    @apply space-y-2 pl-0;
+  }
+  .rich-text li {
+    @apply relative pl-5;
+  }
+  .rich-text li::before {
+    @apply absolute left-0 top-[0.6em] h-1.5 w-1.5 rounded-full bg-signal;
+    content: '';
+  }
+  .rich-text hr {
+    @apply my-8 border-smoke-200;
+  }
+  .rich-text em {
+    @apply italic;
+  }
+  .rich-text table {
+    @apply w-full border-collapse text-sm;
+  }
+  .rich-text th {
+    @apply border-b border-smoke-300 py-2.5 pr-4 text-left align-top font-semibold text-ink;
+  }
+  .rich-text td {
+    @apply border-b border-smoke-200 py-2.5 pr-4 align-top;
+  }
+  .rich-text tr > *:last-child {
+    @apply pr-0;
+  }
+}
+
+/**
+ * Impression. Aucun e-mail de confirmation n'étant envoyé, l'impression — ou
+ * l'enregistrement en PDF — est le moyen pour le client de conserver une trace
+ * de sa commande. La page imprimée doit donc être lisible et complète.
+ */
+@media print {
+  header,
+  footer,
+  nav,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+  }
+
+  /* Les ombres et les fonds gris disparaissent à l'impression : on rétablit
+     des bordures nettes pour que les blocs restent distincts. */
+  .card,
+  [class*='border-2'] {
+    border: 1px solid #b0b2b6 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  a[href]::after {
+    content: '';
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .h-13 {
+    height: 3.25rem;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

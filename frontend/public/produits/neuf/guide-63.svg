@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="1000" height="750" role="img" aria-label="STIHL Rollomatic ES Light 63 — 63 cm · 3/8&quot; · 1,6 mm · 84 maillons">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F1F1F3"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E1000F"/>
+      <stop offset="100%" stop-color="#E1000F" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="750" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1000" height="6" fill="#E1000F"/>
+
+  <g transform="translate(340 240) scale(1.28)">
+    <path d="M28 70 h214 q34 0 34 14 t-34 14 H28 q-12 0 -12 -14 t12 -14 z" fill="#9CA0A7"/>
+    <circle cx="248" cy="84" r="11" fill="none" stroke="#0B0B0C" stroke-width="5"/>
+    <circle cx="52" cy="84" r="7" fill="#0B0B0C"/>
+    <path d="M30 62 h222 M30 106 h222" stroke="#E1000F" stroke-width="5" stroke-linecap="round" stroke-dasharray="4 10"/>
+  </g>
+
+  <rect x="80" y="452" width="420" height="3" fill="url(#rule)"/>
+
+  <text x="80" y="424" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4.5" fill="#E1000F">STIHL</text>
+  <text x="80" y="518" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-1" fill="#0B0B0C">Rollomatic ES Light 63</text>
+  <text x="80" y="566" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#74777E">63 cm · 3/8&quot; · 1,6 mm · 84 maillons</text>
+  <text x="80" y="612" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="500" fill="#A3A5AB">Visuel provisoire — photo produit à venir</text>
+
+  <text x="80" y="690" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#A3A5AB">STIHL MARKET</text>
+</svg>

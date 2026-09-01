@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="1000" height="750" role="img" aria-label="STIHL FUNCTION Ergo — EN 381-5 classe 1 · 20 m/s">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F1F1F3"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E1000F"/>
+      <stop offset="100%" stop-color="#E1000F" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="750" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1000" height="6" fill="#E1000F"/>
+
+  <g transform="translate(340 240) scale(1.28)">
+    <path d="M110 26 h100 l10 108 h-38 l-22 -66 -22 66 h-38 z" fill="#3B3D42"/>
+    <path d="M118 56 h84" stroke="#E1000F" stroke-width="7" stroke-linecap="round"/>
+    <path d="M126 82 h28 M166 82 h28" stroke="#9CA0A7" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <rect x="80" y="452" width="420" height="3" fill="url(#rule)"/>
+
+  <text x="80" y="424" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4.5" fill="#E1000F">STIHL</text>
+  <text x="80" y="518" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="56" font-weight="800" letter-spacing="-1" fill="#0B0B0C">FUNCTION Ergo</text>
+  <text x="80" y="566" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#74777E">EN 381-5 classe 1 · 20 m/s</text>
+  <text x="80" y="612" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="500" fill="#A3A5AB">Visuel provisoire — photo produit à venir</text>
+
+  <text x="80" y="690" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#A3A5AB">STIHL MARKET</text>
+</svg>

@@ -1,0 +1,518 @@
+// Stihl Market — schéma PostgreSQL
+// Marchés : France (fr) et Allemagne (de). Livraison uniquement, pas de retrait.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------- enums
+
+enum Role {
+  CUSTOMER
+  STAFF
+  ADMIN
+}
+
+enum Locale {
+  fr
+  de
+}
+
+enum ProductCondition {
+  NEW /// neuf
+  USED /// occasion
+  REFURBISHED /// révisé / reconditionné en atelier
+}
+
+enum ProductStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+/// STANDARD : TVA classique ventilée sur la facture (produits neufs).
+/// MARGIN   : régime de la marge bénéficiaire (art. 297 A CGI / § 25a UStG),
+///            applicable aux occasions acquises auprès de particuliers.
+///            La TVA n'est ni ventilée ni déductible par l'acheteur.
+enum VatMode {
+  STANDARD
+  MARGIN
+}
+
+enum AddressType {
+  SHIPPING
+  BILLING
+}
+
+enum OrderStatus {
+  PENDING_PAYMENT
+  PAID
+  PREPARING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+enum PaymentMethod {
+  CARD /// Stripe
+  BANK_TRANSFER /// virement SEPA
+}
+
+enum PaymentStatus {
+  PENDING
+  AWAITING_TRANSFER
+  PROCESSING
+  SUCCEEDED
+  FAILED
+  REFUNDED
+  CANCELLED
+}
+
+enum ShipmentStatus {
+  PREPARING
+  HANDED_OVER
+  IN_TRANSIT
+  OUT_FOR_DELIVERY
+  DELIVERED
+  RETURNED
+  LOST
+}
+
+enum StockReason {
+  INITIAL
+  MANUAL_ADJUSTMENT
+  RESTOCK
+  ORDER_RESERVED
+  ORDER_RELEASED
+  ORDER_SHIPPED
+  RETURN
+  LOSS
+}
+
+/// Résultat du rapprochement d'une écriture bancaire avec une commande.
+enum BankEntryStatus {
+  MATCHED /// référence et montant concordants — commande encaissée
+  AMOUNT_MISMATCH /// référence reconnue, montant différent : décision humaine
+  ALREADY_PAID /// commande déjà réglée — doublon ou relevé qui se recoupe
+  UNMATCHED /// aucune référence exploitable dans le libellé
+  IGNORED /// écartée manuellement depuis le back-office
+}
+
+// ---------------------------------------------------------------- clients
+
+model User {
+  id             String    @id @default(cuid())
+  email          String    @unique
+  passwordHash   String
+  firstName      String
+  lastName       String
+  phone          String?
+  company        String?
+  role           Role      @default(CUSTOMER)
+  locale         Locale    @default(fr)
+  country        String    @default("FR") /// ISO 3166-1 alpha-2
+  emailVerified  Boolean   @default(false)
+  marketingOptIn Boolean   @default(false)
+  lastLoginAt    DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  addresses      Address[]
+  orders         Order[]
+  refreshTokens  RefreshToken[]
+  stockMovements StockMovement[]
+  bankStatements BankStatement[]
+
+  @@index([role])
+  @@index([createdAt])
+}
+
+model RefreshToken {
+  id        String    @id @default(cuid())
+  userId    String
+  tokenHash String    @unique
+  expiresAt DateTime
+  revokedAt DateTime?
+  userAgent String?
+  ip        String?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model Address {
+  id         String      @id @default(cuid())
+  userId     String
+  type       AddressType @default(SHIPPING)
+  isDefault  Boolean     @default(false)
+  firstName  String
+  lastName   String
+  company    String?
+  line1      String
+  line2      String?
+  postalCode String
+  city       String
+  country    String /// FR | DE
+  phone      String?
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+// ---------------------------------------------------------------- catalogue
+
+model Category {
+  id       String  @id @default(cuid())
+  slug     String  @unique /// slug canonique neutre, ex. "tronconneuses"
+  position Int     @default(0)
+  icon     String?
+  parentId String?
+
+  parent       Category?             @relation("CategoryTree", fields: [parentId], references: [id])
+  children     Category[]            @relation("CategoryTree")
+  translations CategoryTranslation[]
+  products     Product[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([parentId])
+}
+
+model CategoryTranslation {
+  id              String  @id @default(cuid())
+  categoryId      String
+  locale          Locale
+  name            String
+  slug            String /// slug localisé pour l'URL : "tronconneuses" / "kettensaegen"
+  description     String?
+  metaTitle       String?
+  metaDescription String?
+
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@unique([categoryId, locale])
+  @@unique([locale, slug])
+}
+
+model Product {
+  id         String  @id @default(cuid())
+  sku        String  @unique
+  slug       String  @unique /// slug canonique
+  categoryId String
+  brand      String
+  model      String?
+
+  condition ProductCondition @default(NEW)
+  /// Note d'état sur 10 pour l'occasion (null si neuf)
+  conditionGrade Int?
+
+  /// Prix de vente TTC en centimes, identique FR/DE
+  priceCents Int
+  /// Prix barré TTC en centimes (prix public conseillé du neuf équivalent)
+  compareAtCents Int?
+  currency       String  @default("EUR")
+  vatMode        VatMode @default(STANDARD)
+  /// Taux de TVA en points de base : 2000 = 20 %. Ignoré si vatMode = MARGIN.
+  vatRateBps Int @default(2000)
+
+  /// Stock physique disponible à la vente
+  stock Int @default(0)
+  /// Quantité réservée par des commandes en attente de paiement
+  reservedStock Int @default(0)
+  /// Seuil d'alerte de réapprovisionnement
+  lowStockAlert Int @default(1)
+
+  weightGrams Int           @default(0)
+  status      ProductStatus @default(DRAFT)
+  isFeatured  Boolean       @default(false)
+  /// Pièce unique : occasion en un seul exemplaire, non réapprovisionnable
+  isUnique Boolean @default(false)
+
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  category       Category             @relation(fields: [categoryId], references: [id])
+  translations   ProductTranslation[]
+  images         ProductImage[]
+  specs          ProductSpec[]
+  orderItems     OrderItem[]
+  stockMovements StockMovement[]
+
+  @@index([categoryId])
+  @@index([status, condition])
+  @@index([priceCents])
+  @@index([isFeatured])
+}
+
+model ProductTranslation {
+  id               String  @id @default(cuid())
+  productId        String
+  locale           Locale
+  name             String
+  slug             String /// slug localisé pour l'URL produit
+  shortDescription String?
+  description      String? @db.Text
+  /// Description honnête de l'état, affichée sur les occasions
+  conditionNote   String? @db.Text
+  metaTitle       String?
+  metaDescription String?
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, locale])
+  @@unique([locale, slug])
+}
+
+model ProductImage {
+  id        String  @id @default(cuid())
+  productId String
+  url       String
+  altFr     String?
+  altDe     String?
+  position  Int     @default(0)
+  width     Int?
+  height    Int?
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId, position])
+}
+
+model ProductSpec {
+  id        String @id @default(cuid())
+  productId String
+  locale    Locale
+  label     String
+  value     String
+  position  Int    @default(0)
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId, locale, position])
+}
+
+model StockMovement {
+  id         String      @id @default(cuid())
+  productId  String
+  delta      Int /// positif = entrée, négatif = sortie
+  stockAfter Int
+  reason     StockReason
+  note       String?
+  orderId    String?
+  userId     String?
+  createdAt  DateTime    @default(now())
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  order   Order?  @relation(fields: [orderId], references: [id], onDelete: SetNull)
+  user    User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([productId, createdAt])
+  @@index([orderId])
+}
+
+// ---------------------------------------------------------------- commandes
+
+model Order {
+  id          String  @id @default(cuid())
+  orderNumber String  @unique /// SM-2026-00001
+  /// Numéro de facture, attribué à l'encaissement et jamais avant : une
+  /// numérotation de facture doit être séquentielle et sans trou.
+  invoiceNumber String? @unique /// FA-2026-00001
+  userId        String?
+  email       String
+  phone       String?
+  locale      Locale  @default(fr)
+  country     String /// pays de livraison : FR | DE
+
+  status        OrderStatus   @default(PENDING_PAYMENT)
+  paymentMethod PaymentMethod
+  paymentStatus PaymentStatus @default(PENDING)
+
+  currency String @default("EUR")
+  /// Tous les montants sont TTC, en centimes
+  subtotalCents Int
+  shippingCents Int @default(0)
+  discountCents Int @default(0)
+  totalCents    Int
+  /// TVA incluse dans le total (0 si intégralement au régime de la marge)
+  vatCents Int @default(0)
+
+  shippingAddress Json
+  billingAddress  Json
+
+  /// Paiement carte (Stripe)
+  stripePaymentIntentId String? @unique
+  stripeChargeId        String?
+
+  /// Paiement par virement SEPA
+  bankTransferRef    String?   @unique /// référence à rappeler dans le libellé
+  bankTransferDueAt  DateTime?
+  bankTransferPaidAt DateTime?
+
+  customerNote String? @db.Text
+  internalNote String? @db.Text
+
+  paidAt      DateTime?
+  cancelledAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  user           User?                @relation(fields: [userId], references: [id], onDelete: SetNull)
+  items          OrderItem[]
+  shipments      Shipment[]
+  stockMovements StockMovement[]
+  bankEntries    BankStatementEntry[]
+
+  @@index([userId])
+  @@index([status])
+  @@index([paymentStatus])
+  @@index([createdAt])
+  @@index([email])
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  orderId   String
+  productId String?
+
+  /// Instantané au moment de la commande : le produit peut évoluer ou disparaître
+  sku            String
+  name           String
+  condition      ProductCondition
+  vatMode        VatMode
+  vatRateBps     Int
+  unitPriceCents Int
+  quantity       Int
+  totalCents     Int
+  imageUrl       String?
+
+  order   Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+
+  @@index([orderId])
+  @@index([productId])
+}
+
+model Shipment {
+  id             String         @id @default(cuid())
+  orderId        String
+  carrier        String /// DPD, DHL, Chronopost, Schenker…
+  trackingNumber String?
+  trackingUrl    String?
+  status         ShipmentStatus @default(PREPARING)
+  weightGrams    Int?
+  shippedAt      DateTime?
+  deliveredAt    DateTime?
+  estimatedAt    DateTime?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@index([trackingNumber])
+}
+
+// ---------------------------------------------------------------- livraison
+
+model ShippingRate {
+  id         String @id @default(cuid())
+  country    String /// FR | DE
+  name       String
+  carrier    String
+  minWeightG Int    @default(0)
+  maxWeightG Int
+  priceCents Int
+  /// Franco de port au-delà de ce montant TTC (null = jamais offert)
+  freeAboveCents Int?
+  etaMinDays     Int     @default(2)
+  etaMaxDays     Int     @default(5)
+  active         Boolean @default(true)
+
+  @@unique([country, carrier, minWeightG, maxWeightG])
+  @@index([country, active])
+}
+
+// ------------------------------------------------------ relevés bancaires
+
+/// Un fichier CAMT.053 importé depuis le back-office.
+model BankStatement {
+  id          String    @id @default(cuid())
+  fileName    String
+  /// IBAN du compte présenté par le relevé
+  accountIban String?
+  /// Identifiant du relevé attribué par la banque
+  externalId  String?
+  fromDate    DateTime?
+  toDate      DateTime?
+  /// Écritures au crédit retenues (les débits sont ignorés)
+  creditCount Int       @default(0)
+  /// Écritures nouvelles réellement enregistrées lors de cet import
+  importedCount Int     @default(0)
+  matchedCount  Int     @default(0)
+  importedById  String?
+  createdAt     DateTime @default(now())
+
+  importedBy User?                @relation(fields: [importedById], references: [id], onDelete: SetNull)
+  entries    BankStatementEntry[]
+
+  @@index([createdAt])
+}
+
+/// Une écriture au crédit, et son rapprochement avec une commande.
+model BankStatementEntry {
+  id          String @id @default(cuid())
+  statementId String
+
+  /// Empreinte stable de l'écriture : deux relevés qui se recouvrent ne
+  /// créent pas de doublon et un même fichier peut être redéposé sans risque.
+  fingerprint String @unique
+
+  /// Référence de l'écriture attribuée par la banque (AcctSvcrRef, EndToEndId…)
+  bankReference String?
+  amountCents   Int
+  currency      String   @default("EUR")
+  bookedAt      DateTime
+  valueDate     DateTime?
+  debtorName    String?
+  debtorIban    String?
+  /// Libellé du virement, d'où la référence de commande est extraite
+  remittance String? @db.Text
+
+  status  BankEntryStatus
+  orderId String?
+  note    String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  statement BankStatement @relation(fields: [statementId], references: [id], onDelete: Cascade)
+  order     Order?        @relation(fields: [orderId], references: [id], onDelete: SetNull)
+
+  @@index([statementId])
+  @@index([status])
+  @@index([orderId])
+  @@index([bookedAt])
+}
+
+// ---------------------------------------------------------------- divers
+
+model Setting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}

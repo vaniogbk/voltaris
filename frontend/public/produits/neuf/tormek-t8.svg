@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="1000" height="750" role="img" aria-label="TORMEK T-8 — Meule 250 mm · 90 tr/min · 230 V">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F1F1F3"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E1000F"/>
+      <stop offset="100%" stop-color="#E1000F" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="750" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1000" height="6" fill="#E1000F"/>
+
+  <g transform="translate(340 240) scale(1.28)">
+    <rect x="88" y="52" width="144" height="70" rx="12" fill="#3B3D42"/>
+    <ellipse cx="88" cy="87" rx="26" ry="52" fill="#9CA0A7"/>
+    <ellipse cx="232" cy="87" rx="20" ry="42" fill="#9CA0A7" opacity=".7"/>
+    <path d="M120 40 h96" stroke="#9CA0A7" stroke-width="7" stroke-linecap="round"/>
+    <rect x="128" y="76" width="64" height="22" rx="5" fill="#E1000F"/>
+  </g>
+
+  <rect x="80" y="452" width="420" height="3" fill="url(#rule)"/>
+
+  <text x="80" y="424" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4.5" fill="#E1000F">TORMEK</text>
+  <text x="80" y="518" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="56" font-weight="800" letter-spacing="-1" fill="#0B0B0C">T-8</text>
+  <text x="80" y="566" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#74777E">Meule 250 mm · 90 tr/min · 230 V</text>
+  <text x="80" y="612" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="500" fill="#A3A5AB">Visuel provisoire — photo produit à venir</text>
+
+  <text x="80" y="690" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#A3A5AB">STIHL MARKET</text>
+</svg>

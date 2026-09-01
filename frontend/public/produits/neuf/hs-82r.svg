@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="1000" height="750" role="img" aria-label="STIHL HS 82 R — 22,7 cm³ · lame 75 cm · dents 33 mm">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F1F1F3"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E1000F"/>
+      <stop offset="100%" stop-color="#E1000F" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="750" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1000" height="6" fill="#E1000F"/>
+
+  <g transform="translate(340 240) scale(1.28)">
+    <rect x="24" y="66" width="92" height="38" rx="11" fill="#3B3D42"/>
+    <path d="M116 74 h176 v22 H116 z" fill="#9CA0A7"/>
+    <path d="M124 74 v-11 M144 74 v-11 M164 74 v-11 M184 74 v-11 M204 74 v-11 M224 74 v-11 M244 74 v-11 M264 74 v-11 M284 74 v-11" stroke="#E1000F" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="60" cy="85" r="8" fill="#E1000F"/>
+  </g>
+
+  <rect x="80" y="452" width="420" height="3" fill="url(#rule)"/>
+
+  <text x="80" y="424" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4.5" fill="#E1000F">STIHL</text>
+  <text x="80" y="518" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="56" font-weight="800" letter-spacing="-1" fill="#0B0B0C">HS 82 R</text>
+  <text x="80" y="566" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#74777E">22,7 cm³ · lame 75 cm · dents 33 mm</text>
+  <text x="80" y="612" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="500" fill="#A3A5AB">Visuel provisoire — photo produit à venir</text>
+
+  <text x="80" y="690" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#A3A5AB">STIHL MARKET</text>
+</svg>

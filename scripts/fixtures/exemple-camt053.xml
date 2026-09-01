@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.053.001.02">
+  <BkToCstmrStmt>
+    <GrpHdr>
+      <MsgId>STIHLMARKET-TEST-001</MsgId>
+      <CreDtTm>2026-09-03T06:00:00</CreDtTm>
+    </GrpHdr>
+    <Stmt>
+      <Id>REL-2026-09-02</Id>
+      <CreDtTm>2026-09-03T06:00:00</CreDtTm>
+      <Acct>
+        <Id><IBAN>FR7630001007941234567890185</IBAN></Id>
+        <Ccy>EUR</Ccy>
+      </Acct>
+      <FrToDt>
+        <FrDtTm>2026-09-02T00:00:00</FrDtTm>
+        <ToDtTm>2026-09-02T23:59:59</ToDtTm>
+      </FrToDt>
+      <Bal>
+        <Tp><CdOrPrtry><Cd>CLBD</Cd></CdOrPrtry></Tp>
+        <Amt Ccy="EUR">12450.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Dt><Dt>2026-09-02</Dt></Dt>
+      </Bal>
+      <Ntry>
+        <NtryRef>BQ-0001</NtryRef>
+        <Amt Ccy="EUR">423.90</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Sts>BOOK</Sts>
+        <BookgDt><Dt>2026-09-02</Dt></BookgDt>
+        <ValDt><Dt>2026-09-02</Dt></ValDt>
+        <AcctSvcrRef>BQ-0001</AcctSvcrRef>
+        <NtryDtls>
+          <TxDtls>
+            <Refs><EndToEndId>NOTPROVIDED</EndToEndId></Refs>
+            <RltdPties>
+              <Dbtr><Nm>MARIE LEROY</Nm></Dbtr>
+              <DbtrAcct><Id><IBAN>FR7630006000011234567890189</IBAN></Id></DbtrAcct>
+            </RltdPties>
+            <RmtInf><Ustrd>VIREMENT SM-W3FMBF</Ustrd></RmtInf>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>BQ-0002</NtryRef>
+        <Amt Ccy="EUR">139.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Sts>BOOK</Sts>
+        <BookgDt><Dt>2026-09-02</Dt></BookgDt>
+        <ValDt><Dt>2026-09-02</Dt></ValDt>
+        <AcctSvcrRef>BQ-0002</AcctSvcrRef>
+        <NtryDtls>
+          <TxDtls>
+            <Refs><EndToEndId>NOTPROVIDED</EndToEndId></Refs>
+            <RltdPties>
+              <Dbtr><Nm>PAUL MARTIN</Nm></Dbtr>
+              <DbtrAcct><Id><IBAN>FR7630004000031234567890147</IBAN></Id></DbtrAcct>
+            </RltdPties>
+            <RmtInf><Ustrd>ACOMPTE SMA7AE7F</Ustrd></RmtInf>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>BQ-0003</NtryRef>
+        <Amt Ccy="EUR">250.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Sts>BOOK</Sts>
+        <BookgDt><Dt>2026-09-02</Dt></BookgDt>
+        <ValDt><Dt>2026-09-02</Dt></ValDt>
+        <AcctSvcrRef>BQ-0003</AcctSvcrRef>
+        <NtryDtls>
+          <TxDtls>
+            <Refs><EndToEndId>NOTPROVIDED</EndToEndId></Refs>
+            <RltdPties>
+              <Dbtr><Nm>ENTREPRISE DUBOIS</Nm></Dbtr>
+              <DbtrAcct><Id><IBAN>FR7630002000051234567890112</IBAN></Id></DbtrAcct>
+            </RltdPties>
+            <RmtInf><Ustrd>REGLEMENT FACTURE</Ustrd></RmtInf>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>BQ-0004</NtryRef>
+        <Amt Ccy="EUR">89.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts>BOOK</Sts>
+        <BookgDt><Dt>2026-09-02</Dt></BookgDt>
+        <ValDt><Dt>2026-09-02</Dt></ValDt>
+        <AcctSvcrRef>BQ-0004</AcctSvcrRef>
+        <NtryDtls>
+          <TxDtls>
+            <Refs><EndToEndId>NOTPROVIDED</EndToEndId></Refs>
+            <RltdPties>
+              <Dbtr><Nm>DPD FRANCE</Nm></Dbtr>
+              <DbtrAcct><Id><IBAN>FR7630003000041234567890175</IBAN></Id></DbtrAcct>
+            </RltdPties>
+            <RmtInf><Ustrd>FRAIS TRANSPORT</Ustrd></RmtInf>
+          </TxDtls>
+        </NtryDtls>
+      </Ntry>
+    </Stmt>
+  </BkToCstmrStmt>
+</Document>

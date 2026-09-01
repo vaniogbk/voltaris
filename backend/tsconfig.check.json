@@ -1,0 +1,16 @@
+{
+  "$comment": "Le tsconfig de build exclut prisma/seed.ts (compile via tsx, hors dist). Cette configuration verifie malgre tout le seed.",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "rootDir": "."
+  },
+  "include": [
+    "prisma/**/*.ts",
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

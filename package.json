@@ -1,0 +1,37 @@
+{
+  "name": "stihl-market",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Stihl Market — boutique en ligne de matériel forestier et d'espaces verts (France et Allemagne)",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:reset": "npm run --prefix backend db:reset",
+    "db:migrate": "npm run --prefix backend prisma:migrate",
+    "db:seed": "npm run --prefix backend db:seed",
+    "db:studio": "npm run --prefix backend prisma:studio",
+    "dev": "concurrently -n api,web -c magenta,cyan \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "npm run --prefix backend dev",
+    "dev:web": "npm run --prefix frontend dev",
+    "build": "npm run build:api && npm run build:web",
+    "build:api": "npm run --prefix backend build",
+    "build:web": "npm run --prefix frontend build",
+    "typecheck": "npm run --prefix backend typecheck && npm run --prefix frontend typecheck",
+    "lint": "npm run --prefix frontend lint",
+    "placeholders": "node scripts/generate-placeholders.mjs",
+    "deploy:check": "node scripts/preflight.mjs",
+    "photos": "node scripts/import-photos.mjs",
+    "test:camt": "node scripts/test-camt053.mjs",
+    "prices": "node scripts/reprice.mjs",
+    "prices:export": "node scripts/reprice.mjs --export",
+    "verify": "npm run typecheck && npm run lint && node scripts/preflight.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
