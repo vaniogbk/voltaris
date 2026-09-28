@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from 'next/server';
 
 const LOCALES = ['fr', 'de'] as const;
 const DEFAULT_LOCALE = 'fr';
-const COOKIE = 'stihl_locale';
+const COOKIE = 'voltaris_locale';
 
 /**
  * Choix de la langue à l'arrivée sur une URL sans préfixe.
