@@ -233,7 +233,29 @@ async function main() {
   console.log('');
 }
 
-main()
+/**
+ * Avec --if-empty, n'amorce que si la base ne contient encore aucune
+ * catégorie. C'est le mode utilisé au démarrage du service : un
+ * redéploiement ne doit pas rejouer le seed sur une boutique en activité,
+ * mais une base fraîchement provisionnée doit se remplir sans intervention.
+ *
+ * Sans le drapeau, le seed s'exécute toujours : c'est ce qu'on veut quand
+ * on le lance à la main avec npm run db:seed.
+ */
+async function shouldRun(): Promise<boolean> {
+  if (!process.argv.includes('--if-empty')) return true;
+
+  const categories = await prisma.category.count();
+  if (categories > 0) {
+    console.log(`Seed ignoré : la base contient déjà ${categories} catégories.`);
+    return false;
+  }
+  console.log('Base vide : amorçage initial.');
+  return true;
+}
+
+shouldRun()
+  .then((run) => (run ? main() : undefined))
   .catch((err) => {
     console.error('\nÉchec du seed :', err);
     process.exit(1);

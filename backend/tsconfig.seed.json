@@ -1,0 +1,14 @@
+{
+  // Le seed vit hors de src/ et n'etait donc compile par personne : il ne
+  // tournait qu'a travers tsx, absent de l'image de production une fois les
+  // devDependencies elaguees. On le compile en JavaScript pour qu'il soit
+  // executable par node seul, au demarrage du service.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "prisma",
+    "outDir": "dist/seed",
+    "sourceMap": false
+  },
+  "include": ["prisma/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
