@@ -75,6 +75,10 @@ export function CheckoutSteps({ locale, current }: { locale: Locale; current: Ch
           );
         })}
       </ol>
+
+      {/* Sous la largeur sm, les libellés ne tiennent pas en ligne : les
+          pastilles seules ne disent rien, on rappelle donc où l'on en est. */}
+      <p className="mt-2.5 text-xs font-semibold text-ink sm:hidden">{labels[current]}</p>
     </nav>
   );
 }
