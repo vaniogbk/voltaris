@@ -1,7 +1,8 @@
 # Image de production pour l'API Voltaris.
-# Railway détecte ce Dockerfile automatiquement s'il est présent ; sinon
-# Nixpacks utilise les scripts build/start du package.json, ce qui fonctionne
-# tout aussi bien.
+#
+# Railway détecte ce Dockerfile et l'utilise, ce qui rend inopérants le
+# `builder` et le `startCommand` de railway.json : c'est le CMD ci-dessous qui
+# fait foi. Toute étape de démarrage doit donc être ajoutée ici, pas là-bas.
 
 FROM node:20-alpine AS deps
 WORKDIR /app
@@ -34,4 +35,8 @@ EXPOSE 4000
 
 # Les migrations sont appliquées au démarrage : un déploiement Railway met la
 # base à niveau avant d'accepter du trafic.
-CMD ["sh", "-c", "npx prisma migrate deploy && node dist/server.js"]
+#
+# `--if-empty` n'amorce le catalogue que si la base ne contient aucune
+# catégorie. Une base fraîchement provisionnée se remplit donc seule, et une
+# boutique en activité n'est jamais réécrite par un redéploiement.
+CMD ["sh", "-c", "npx prisma migrate deploy && node dist/seed/seed.js --if-empty && node dist/server.js"]
