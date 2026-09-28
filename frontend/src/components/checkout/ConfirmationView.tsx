@@ -306,6 +306,18 @@ function TransferPanel({
         />
       </dl>
 
+      {/* Le compte est au nom d'une personne physique, pas de l'enseigne. Sans
+          cette phrase, l'acheteur découvre un nom inconnu au moment de valider
+          son virement — l'écart entre enseigne et bénéficiaire est l'un des
+          premiers signaux de fraude qu'il cherchera. Mieux vaut l'expliquer
+          que le laisser deviner. */}
+      <p className="mt-4 text-xs leading-relaxed text-smoke-500">
+        {interpolate(t.confirmation.beneficiaryNote, {
+          holder: instructions.holder,
+          shop: t.meta.siteName,
+        })}
+      </p>
+
       <p className="mt-5 flex gap-2.5 rounded-lg border border-signal/25 bg-signal-soft p-4 text-sm leading-relaxed text-ink">
         <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-signal" aria-hidden="true" />
         {t.confirmation.transferWarning}

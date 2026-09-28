@@ -234,7 +234,9 @@ export const de: Dictionary = {
       'Öffnen Sie Ihre Banking-App und scannen Sie diesen Girocode: Empfänger, IBAN, Betrag und Verwendungszweck werden automatisch ausgefüllt. Sie müssen nur noch bestätigen.',
     qrFallback:
       'Ihre Bank liest dieses Format nicht? Verwenden Sie die untenstehenden Daten und übernehmen Sie die Referenz exakt.',
-    holder: 'Kontoinhaber',
+    holder: 'Zahlungsempfänger',
+    beneficiaryNote:
+      'Zahlungsempfänger: {holder}, Inhaber von {shop}. Das Konto läuft auf seinen Namen, das ist so gewollt.',
     iban: 'IBAN',
     bic: 'BIC',
     bank: 'Bank',

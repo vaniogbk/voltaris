@@ -233,7 +233,9 @@ export const fr = {
       'Ouvrez votre application bancaire et scannez ce code : le bénéficiaire, l’IBAN, le montant et la référence sont remplis automatiquement. Vous n’avez plus qu’à valider.',
     qrFallback:
       'Votre banque ne lit pas ce format ? Utilisez les coordonnées ci-dessous, en recopiant la référence à l’identique.',
-    holder: 'Titulaire',
+    holder: 'Bénéficiaire',
+    beneficiaryNote:
+      'Bénéficiaire : {holder}, propriétaire de {shop}. Le compte est à son nom, c’est normal.',
     iban: 'IBAN',
     bic: 'BIC',
     bank: 'Banque',
