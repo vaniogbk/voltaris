@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="1000" height="750" role="img" aria-label="STIHL 2-en-1 · 5,2 mm — Chaînes 3/8&quot; · dent et limiteur">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="1000" height="750" role="img" aria-label="STIHL TS 500i — 5,0 kW · disque 350 mm · coupe 125 mm">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#FFFFFF"/>
@@ -14,16 +14,17 @@
   <rect x="0" y="0" width="1000" height="6" fill="#E1000F"/>
 
   <g transform="translate(340 240) scale(1.28)">
-    <path d="M40 116 L232 40" stroke="#9CA0A7" stroke-width="13" stroke-linecap="round"/>
-    <path d="M232 40 l48 -18" stroke="#3B3D42" stroke-width="19" stroke-linecap="round"/>
-    <path d="M62 108 l6 14 M86 99 l6 14 M110 90 l6 14 M134 81 l6 14 M158 72 l6 14" stroke="#E1000F" stroke-width="4" stroke-linecap="round"/>
+    <rect x="20" y="62" width="112" height="46" rx="12" fill="#3B3D42"/>
+    <circle cx="232" cy="84" r="56" fill="none" stroke="#9CA0A7" stroke-width="10"/>
+    <circle cx="232" cy="84" r="12" fill="#E1000F"/>
+    <path d="M132 74 h48 M132 96 h48" stroke="#9CA0A7" stroke-width="8" stroke-linecap="round"/>
   </g>
 
   <rect x="80" y="452" width="420" height="3" fill="url(#rule)"/>
 
   <text x="80" y="424" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4.5" fill="#E1000F">STIHL</text>
-  <text x="80" y="518" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="46" font-weight="800" letter-spacing="-1" fill="#0B0B0C">2-en-1 · 5,2 mm</text>
-  <text x="80" y="566" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#74777E">Chaînes 3/8&quot; · dent et limiteur</text>
+  <text x="80" y="518" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="56" font-weight="800" letter-spacing="-1" fill="#0B0B0C">TS 500i</text>
+  <text x="80" y="566" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#74777E">5,0 kW · disque 350 mm · coupe 125 mm</text>
   <text x="80" y="612" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="500" fill="#A3A5AB">Visuel provisoire — photo produit à venir</text>
 
   <text x="80" y="690" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#A3A5AB">VOLTARIS</text>

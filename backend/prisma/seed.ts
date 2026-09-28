@@ -245,6 +245,18 @@ async function main() {
 async function shouldRun(): Promise<boolean> {
   if (!process.argv.includes('--if-empty')) return true;
 
+  // Échappatoire pour pousser une mise à jour du catalogue (nouvelle
+  // catégorie, nouvelle référence) sur une base déjà remplie : on pose
+  // SEED_FORCE=1 dans les variables du service, on redéploie, on la retire.
+  //
+  // Le seed procède par upsert, donc rejouer n'efface rien — mais il réécrit
+  // prix et stocks avec les valeurs du dépôt. À n'utiliser que tant que les
+  // ajustements se font ici et non depuis le back-office.
+  if (process.env.SEED_FORCE === '1') {
+    console.log('SEED_FORCE=1 : le catalogue du dépôt est réappliqué.');
+    return true;
+  }
+
   const categories = await prisma.category.count();
   if (categories > 0) {
     console.log(`Seed ignoré : la base contient déjà ${categories} catégories.`);

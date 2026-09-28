@@ -62,6 +62,15 @@ const GLYPHS = {
     <circle cx="232" cy="84" r="56" fill="none" stroke="${MIST}" stroke-width="10"/>
     <circle cx="232" cy="84" r="12" fill="${RED}"/>
     <path d="M132 74 h48 M132 96 h48" stroke="${MIST}" stroke-width="8" stroke-linecap="round"/>`,
+  // Trémie d'alimentation, corps, goulotte d'éjection et deux roues : la
+  // silhouette d'un broyeur se reconnaît à l'entonnoir, pas au moteur.
+  shredder: `
+    <path d="M92 24 h140 l-28 46 h-84 z" fill="${MIST}"/>
+    <rect x="104" y="70" width="96" height="50" rx="10" fill="${FOG}"/>
+    <path d="M200 82 h46 l16 28 h-62 z" fill="${MIST}"/>
+    <path d="M120 90 h64" stroke="${RED}" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="120" cy="130" r="13" fill="${FOG}"/>
+    <circle cx="186" cy="130" r="13" fill="${FOG}"/>`,
   grinder: `
     <rect x="88" y="52" width="144" height="70" rx="12" fill="${FOG}"/>
     <ellipse cx="88" cy="87" rx="26" ry="52" fill="${MIST}"/>
@@ -141,6 +150,11 @@ const PRODUCTS = [
   ['bg-86', 'BG 86', 'STIHL', 'blower', '27,2 cm³ · 810 m³/h · 80 m/s'],
   ['ht-105', 'HT 105', 'STIHL', 'pole', '31,4 cm³ · télescopique 2,70–3,90 m'],
   ['ts-420', 'TS 420', 'STIHL', 'cutoff', '66,7 cm³ · disque 350 mm · coupe 125 mm'],
+  ['ts-500i', 'TS 500i', 'STIHL', 'cutoff', '5,0 kW · disque 350 mm · coupe 125 mm'],
+  ['gta-26', 'GTA 26', 'STIHL', 'chainsaw', 'batterie 10,8 V · coupe 8 cm · 1,2 kg'],
+  ['ghe-135l', 'GHE 135 L', 'STIHL', 'shredder', 'électrique 230 V · rouleau · branches 35 mm'],
+  ['ghe-250s', 'GHE 250 S', 'STIHL', 'shredder', 'électrique · multi-couteaux · branches 35 mm'],
+  ['gh-370s', 'GH 370 S', 'STIHL', 'shredder', 'thermique · autonome · branches 45 mm'],
   ['tormek-t8', 'T-8', 'TORMEK', 'grinder', 'Meule 250 mm · 90 tr/min · 230 V'],
   ['affuteur-2en1', '2-en-1 · 5,2 mm', 'STIHL', 'file', 'Chaînes 3/8" · dent et limiteur'],
   ['guide-63', 'Rollomatic ES Light 63', 'STIHL', 'bar', '63 cm · 3/8" · 1,6 mm · 84 maillons'],

@@ -1045,7 +1045,7 @@ Für die regelmäßige Gartenpflege ersetzt sie eine Benzinmaschine mit Vorteile
   build({
     sku: 'SM-TS420',
     slug: 'stihl-ts-420-decoupeuse',
-    categorySlug: 'outils-motorises',
+    categorySlug: 'scies',
     model: 'TS 420',
     marketPriceCents: 114_900,
     stock: 5,
@@ -1730,6 +1730,281 @@ Für ein Team, das den ganzen Tag mit Akku arbeitet, macht dieses Ladegerät das
         ['Typ', 'Schnellladung, aktive Belüftung'],
         ['System', 'STIHL AP'],
         ['Ladezeit', '80 % in 25 min (AP 300 S)'],
+      ],
+    },
+  }),
+
+  // ================================================================== SCIES
+  build({
+    sku: 'SM-TS500I',
+    slug: 'stihl-ts-500i-decoupeuse-350',
+    categorySlug: 'scies',
+    model: 'TS 500i',
+    marketPriceCents: 154_900,
+    stock: 3,
+    weightGrams: 11_600,
+    featured: true,
+    placeholder: 'ts-500i',
+    fr: {
+      name: 'STIHL TS 500i — découpeuse à disque 350 mm',
+      tagline:
+        "La seule découpeuse à injection électronique : pas de starter, pas de réglage de carburateur.",
+      body: `La **TS 500i** applique à la découpeuse ce que la MS 500i a apporté à la tronçonneuse : l'injection électronique. Concrètement, on démarre sans starter, le mélange se règle seul selon l'altitude et la température, et la machine reprend immédiatement quelle que soit sa position.
+
+Avec **5 kW pour 11,6 kg**, elle coupe jusqu'à **125 mm** de profondeur au disque de 350 mm. Le filtre à air à pré-séparation cyclonique encaisse la poussière de béton sans encrassement prématuré.
+
+- Démarrage sans starter, même moteur froid
+- Arrosage intégré pour la coupe à l'eau
+- Guidage du disque au plus près du corps : moins de fatigue sur les longues coupes`,
+      metaTitle: 'STIHL TS 500i — découpeuse à disque 350 mm à injection',
+      metaDescription:
+        "Découpeuse STIHL TS 500i à injection électronique, 5 kW, disque 350 mm, profondeur de coupe 125 mm. Neuve, garantie 2 ans, expédiée sous 24 h.",
+    },
+    de: {
+      name: 'STIHL TS 500i — Trennschleifer 350 mm',
+      tagline:
+        'Der einzige Trennschleifer mit elektronischer Einspritzung: kein Choke, keine Vergasereinstellung.',
+      body: `Der **TS 500i** bringt in den Trennschleifer, was die MS 500i der Kettensäge gebracht hat: die elektronische Einspritzung. Kein Choke beim Start, selbsttätige Gemischregelung nach Höhe und Temperatur, sofortige Gasannahme in jeder Lage.
+
+Mit **5 kW bei 11,6 kg** schneidet er mit der 350-mm-Scheibe bis **125 mm** tief. Der Luftfilter mit Zyklon-Vorabscheidung verträgt Betonstaub, ohne frühzeitig zuzusetzen.
+
+- Start ohne Choke, auch bei kaltem Motor
+- Integrierte Wasseranschlüsse für den Nassschnitt
+- Körpernahe Scheibenführung: weniger Ermüdung bei langen Schnitten`,
+      metaTitle: 'STIHL TS 500i — Trennschleifer 350 mm mit Einspritzung',
+      metaDescription:
+        'STIHL TS 500i Trennschleifer mit elektronischer Einspritzung, 5 kW, 350-mm-Scheibe, 125 mm Schnitttiefe. Neu, 2 Jahre Garantie, Versand in 24 Std.',
+    },
+    specs: {
+      fr: [
+        ['Moteur', 'Thermique 2-temps à injection STIHL'],
+        ['Puissance', '5,0 kW'],
+        ['Diamètre de disque', '350 mm'],
+        ['Profondeur de coupe', '125 mm'],
+        ['Poids à vide', '11,6 kg'],
+      ],
+      de: [
+        ['Motor', 'Zweitakt mit STIHL Einspritzung'],
+        ['Leistung', '5,0 kW'],
+        ['Scheibendurchmesser', '350 mm'],
+        ['Schnitttiefe', '125 mm'],
+        ['Leergewicht', '11,6 kg'],
+      ],
+    },
+  }),
+
+  build({
+    sku: 'SM-GTA26',
+    slug: 'stihl-gta-26-scie-batterie',
+    categorySlug: 'scies',
+    model: 'GTA 26',
+    marketPriceCents: 17_900,
+    stock: 10,
+    weightGrams: 1_200,
+    placeholder: 'gta-26',
+    fr: {
+      name: 'STIHL GTA 26 — scie à batterie, set complet',
+      tagline: "Une vraie chaîne de tronçonneuse tenue d'une main, là où le sécateur renonce.",
+      body: `La **GTA 26** coupe ce qu'un sécateur écrase et ce qu'une tronçonneuse rend dangereux : branches jusqu'à **8 cm**, palettes, planches, racines.
+
+À **1,2 kg batterie comprise**, elle se tient d'une main et se glisse dans une caisse à outils. La chaîne tourne à 8 m/s, avec lubrification automatique comme sur une machine de plein format.
+
+- Set livré **avec batterie AS 2 et chargeur AL 1**
+- Environ 80 coupes de 4 cm par charge
+- Protection de chaîne intégrée pour le transport`,
+      metaTitle: 'STIHL GTA 26 — scie à batterie avec batterie et chargeur',
+      metaDescription:
+        'Scie à batterie STIHL GTA 26, 1,2 kg, coupe jusqu’à 8 cm, livrée avec batterie AS 2 et chargeur AL 1. Neuve, garantie 2 ans, expédiée sous 24 h.',
+    },
+    de: {
+      name: 'STIHL GTA 26 — Akku-Gartensäge, Set',
+      tagline: 'Eine echte Sägekette in einer Hand, dort wo die Gartenschere aufgibt.',
+      body: `Die **GTA 26** schneidet, was eine Gartenschere quetscht und wofür eine Kettensäge zu gefährlich wäre: Äste bis **8 cm**, Paletten, Bretter, Wurzeln.
+
+Mit **1,2 kg samt Akku** liegt sie in einer Hand und passt in den Werkzeugkoffer. Die Kette läuft mit 8 m/s, mit automatischer Schmierung wie bei einer großen Maschine.
+
+- Set **mit Akku AS 2 und Ladegerät AL 1**
+- Rund 80 Schnitte à 4 cm je Ladung
+- Integrierter Kettenschutz für den Transport`,
+      metaTitle: 'STIHL GTA 26 — Akku-Gartensäge mit Akku und Ladegerät',
+      metaDescription:
+        'STIHL GTA 26 Akku-Gartensäge, 1,2 kg, schneidet bis 8 cm, mit Akku AS 2 und Ladegerät AL 1. Neu, 2 Jahre Garantie, Versand in 24 Std.',
+    },
+    specs: {
+      fr: [
+        ['Type', 'Batterie 10,8 V (système AS)'],
+        ['Diamètre de coupe max.', '8 cm'],
+        ['Vitesse de chaîne', '8 m/s'],
+        ['Poids avec batterie', '1,2 kg'],
+        ['Livré avec', 'Batterie AS 2, chargeur AL 1, coffret'],
+      ],
+      de: [
+        ['Typ', 'Akku 10,8 V (AS-System)'],
+        ['Max. Schnittdurchmesser', '8 cm'],
+        ['Kettengeschwindigkeit', '8 m/s'],
+        ['Gewicht mit Akku', '1,2 kg'],
+        ['Lieferumfang', 'Akku AS 2, Ladegerät AL 1, Koffer'],
+      ],
+    },
+  }),
+
+  // =============================================================== BROYEURS
+  build({
+    sku: 'SM-GHE135L',
+    slug: 'stihl-ghe-135-l-broyeur-rouleau',
+    categorySlug: 'broyeurs',
+    model: 'GHE 135 L',
+    marketPriceCents: 44_900,
+    stock: 4,
+    weightGrams: 26_000,
+    placeholder: 'ghe-135l',
+    fr: {
+      name: 'STIHL GHE 135 L — broyeur électrique à rouleau',
+      tagline: "Le système à rouleau : il avale le bois vert tout seul, sans hurler.",
+      body: `Le **GHE 135 L** travaille au rouleau et non aux couteaux. La différence se sent dès la première branche : le rouleau **entraîne la matière de lui-même**, sans qu'on ait à pousser, et le broyat sort écrasé plutôt que déchiqueté — ce qui se composte mieux.
+
+C'est aussi nettement plus silencieux qu'un multi-couteaux, argument réel en lotissement.
+
+- Branches jusqu'à **35 mm**
+- Alimentation électrique 230 V : ni essence, ni vidange
+- Châssis à roues, déplaçable par une personne`,
+      metaTitle: 'STIHL GHE 135 L — broyeur de végétaux électrique à rouleau',
+      metaDescription:
+        'Broyeur de végétaux STIHL GHE 135 L à rouleau, électrique 230 V, branches jusqu’à 35 mm. Silencieux, idéal en zone résidentielle. Neuf, garantie 2 ans.',
+    },
+    de: {
+      name: 'STIHL GHE 135 L — Elektro-Häcksler mit Walze',
+      tagline: 'Das Walzensystem: es zieht frisches Holz von selbst ein, und das leise.',
+      body: `Der **GHE 135 L** arbeitet mit Walze statt Messern. Der Unterschied zeigt sich beim ersten Ast: die Walze **zieht das Material selbsttätig ein**, ohne Nachschieben, und das Häckselgut kommt gequetscht statt zerfasert heraus — es kompostiert besser.
+
+Außerdem deutlich leiser als ein Messerhäcksler, was im Wohngebiet zählt.
+
+- Äste bis **35 mm**
+- Elektroantrieb 230 V: kein Benzin, kein Ölwechsel
+- Fahrgestell, von einer Person zu bewegen`,
+      metaTitle: 'STIHL GHE 135 L — Elektro-Gartenhäcksler mit Walze',
+      metaDescription:
+        'STIHL GHE 135 L Gartenhäcksler mit Walzensystem, Elektro 230 V, Äste bis 35 mm. Leise, ideal im Wohngebiet. Neu, 2 Jahre Garantie.',
+    },
+    specs: {
+      fr: [
+        ['Motorisation', 'Électrique 230 V'],
+        ['Système de coupe', 'Rouleau à entraînement automatique'],
+        ['Diamètre de branche max.', '35 mm'],
+        ['Poids', '26 kg'],
+      ],
+      de: [
+        ['Antrieb', 'Elektro 230 V'],
+        ['Schneidsystem', 'Walze mit Selbsteinzug'],
+        ['Max. Astdurchmesser', '35 mm'],
+        ['Gewicht', '26 kg'],
+      ],
+    },
+  }),
+
+  build({
+    sku: 'SM-GHE250S',
+    slug: 'stihl-ghe-250-s-broyeur-multi-couteaux',
+    categorySlug: 'broyeurs',
+    model: 'GHE 250 S',
+    marketPriceCents: 59_900,
+    stock: 3,
+    weightGrams: 28_000,
+    placeholder: 'ghe-250s',
+    fr: {
+      name: 'STIHL GHE 250 S — broyeur électrique multi-couteaux',
+      tagline: 'Pour les tailles mélangées : branches, feuillage et tiges tendres dans la même goulotte.',
+      body: `Là où le rouleau bloque sur du feuillage humide, le **multi-couteaux** du GHE 250 S continue. C'est la machine des tailles hétérogènes : haie, rosiers, branchages et tiges tendres passent ensemble sans tri préalable.
+
+Le disque porte plusieurs lames réversibles : quand une arête fatigue, on retourne la lame au lieu de la remplacer.
+
+- Branches jusqu'à **35 mm**
+- Lames réversibles, coût d'entretien contenu
+- Goulotte large, adaptée au vrac`,
+      metaTitle: 'STIHL GHE 250 S — broyeur électrique multi-couteaux',
+      metaDescription:
+        'Broyeur de végétaux STIHL GHE 250 S, électrique, système multi-couteaux à lames réversibles, branches jusqu’à 35 mm. Neuf, garantie 2 ans.',
+    },
+    de: {
+      name: 'STIHL GHE 250 S — Elektro-Häcksler mit Messerwalze',
+      tagline: 'Für gemischtes Schnittgut: Äste, Laub und weiche Triebe im selben Trichter.',
+      body: `Wo eine Walze bei nassem Laub blockiert, arbeitet die **Messerwalze** des GHE 250 S weiter. Das ist die Maschine für gemischtes Material: Hecke, Rosen, Ast- und Weichschnitt gehen gemeinsam durch, ohne Vorsortieren.
+
+Die Scheibe trägt mehrere Wendemesser: ist eine Schneide stumpf, wird das Messer gewendet statt ersetzt.
+
+- Äste bis **35 mm**
+- Wendemesser, geringe Unterhaltskosten
+- Breiter Trichter für loses Material`,
+      metaTitle: 'STIHL GHE 250 S — Elektro-Gartenhäcksler mit Messerwalze',
+      metaDescription:
+        'STIHL GHE 250 S Gartenhäcksler, Elektro, Messerwalze mit Wendemessern, Äste bis 35 mm. Neu, 2 Jahre Garantie.',
+    },
+    specs: {
+      fr: [
+        ['Motorisation', 'Électrique 230 V'],
+        ['Système de coupe', 'Multi-couteaux, lames réversibles'],
+        ['Diamètre de branche max.', '35 mm'],
+        ['Poids', '28 kg'],
+      ],
+      de: [
+        ['Antrieb', 'Elektro 230 V'],
+        ['Schneidsystem', 'Messerwalze mit Wendemessern'],
+        ['Max. Astdurchmesser', '35 mm'],
+        ['Gewicht', '28 kg'],
+      ],
+    },
+  }),
+
+  build({
+    sku: 'SM-GH370S',
+    slug: 'stihl-gh-370-s-broyeur-thermique',
+    categorySlug: 'broyeurs',
+    model: 'GH 370 S',
+    marketPriceCents: 99_900,
+    stock: 2,
+    weightGrams: 52_000,
+    featured: true,
+    placeholder: 'gh-370s',
+    fr: {
+      name: 'STIHL GH 370 S — broyeur thermique',
+      tagline: 'Le broyeur qui va au fond du terrain, là où il n’y a pas de prise.',
+      body: `Le **GH 370 S** est thermique, ce qui change tout sur une parcelle : on broie où le bois est tombé, sans tirer cinquante mètres de rallonge.
+
+Le moteur essence encaisse des diamètres que l'électrique refuse — jusqu'à **45 mm** — et tient la cadence sur des chantiers longs, là où un moteur électrique finit par protéger sa température.
+
+- Branches jusqu'à **45 mm**
+- Autonome : ni prise, ni rallonge
+- Châssis renforcé et grandes roues pour terrain irrégulier`,
+      metaTitle: 'STIHL GH 370 S — broyeur de végétaux thermique',
+      metaDescription:
+        'Broyeur de végétaux thermique STIHL GH 370 S, branches jusqu’à 45 mm, autonome sans prise électrique. Neuf, garantie 2 ans, expédié sous 24 h.',
+    },
+    de: {
+      name: 'STIHL GH 370 S — Benzin-Häcksler',
+      tagline: 'Der Häcksler für das hintere Grundstück, wo keine Steckdose ist.',
+      body: `Der **GH 370 S** läuft mit Benzin, und das ändert auf dem Grundstück alles: gehäckselt wird dort, wo das Holz liegt, ohne fünfzig Meter Kabeltrommel.
+
+Der Benzinmotor verkraftet Durchmesser, die ein Elektrogerät verweigert — bis **45 mm** — und hält die Leistung über lange Einsätze, wo ein Elektromotor in den Temperaturschutz geht.
+
+- Äste bis **45 mm**
+- Netzunabhängig: keine Steckdose, kein Kabel
+- Verstärktes Fahrgestell und große Räder für unebenes Gelände`,
+      metaTitle: 'STIHL GH 370 S — Benzin-Gartenhäcksler',
+      metaDescription:
+        'STIHL GH 370 S Benzin-Gartenhäcksler, Äste bis 45 mm, netzunabhängig. Neu, 2 Jahre Garantie, Versand in 24 Std.',
+    },
+    specs: {
+      fr: [
+        ['Motorisation', 'Thermique essence'],
+        ['Diamètre de branche max.', '45 mm'],
+        ['Alimentation', 'Autonome, sans raccordement électrique'],
+        ['Poids', '52 kg'],
+      ],
+      de: [
+        ['Antrieb', 'Benzinmotor'],
+        ['Max. Astdurchmesser', '45 mm'],
+        ['Versorgung', 'Netzunabhängig'],
+        ['Gewicht', '52 kg'],
       ],
     },
   }),

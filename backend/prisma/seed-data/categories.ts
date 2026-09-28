@@ -31,8 +31,31 @@ export const CATEGORIES: CategorySeed[] = [
     },
   },
   {
-    slug: 'debroussailleuses',
+    slug: 'scies',
     position: 2,
+    icon: 'saw',
+    fr: {
+      name: 'Scies et découpeuses',
+      slug: 'scies-decoupeuses',
+      description:
+        "Scies à batterie pour la coupe fine et découpeuses à disque pour le chantier. Complément direct de la tronçonneuse là où elle est trop encombrante ou trop puissante.",
+      metaTitle: 'Scies à batterie et découpeuses à disque',
+      metaDescription:
+        'Scies à batterie pour l’élagage et la coupe fine, découpeuses à disque pour le béton et le métal. Neuves et occasions révisées, livrées en France et en Allemagne.',
+    },
+    de: {
+      name: 'Sägen und Trennschleifer',
+      slug: 'saegen-trennschleifer',
+      description:
+        'Akku-Sägen für feine Schnitte und Trennschleifer für die Baustelle. Die direkte Ergänzung zur Kettensäge, wo diese zu sperrig oder zu stark ist.',
+      metaTitle: 'Akku-Sägen und Trennschleifer',
+      metaDescription:
+        'Akku-Sägen für Entastung und feine Schnitte, Trennschleifer für Beton und Metall. Neu und geprüft gebraucht, Lieferung nach Deutschland und Frankreich.',
+    },
+  },
+  {
+    slug: 'debroussailleuses',
+    position: 3,
     icon: 'brushcutter',
     fr: {
       name: 'Débroussailleuses',
@@ -54,8 +77,31 @@ export const CATEGORIES: CategorySeed[] = [
     },
   },
   {
+    slug: 'broyeurs',
+    position: 4,
+    icon: 'shredder',
+    fr: {
+      name: 'Broyeurs de végétaux',
+      slug: 'broyeurs-vegetaux',
+      description:
+        "Broyeurs électriques et thermiques pour réduire branches et tailles en paillage. Système à rouleau pour le bois vert, multi-couteaux pour les déchets mélangés.",
+      metaTitle: 'Broyeurs de végétaux électriques et thermiques',
+      metaDescription:
+        'Broyeurs de branches électriques et thermiques : rouleau silencieux pour le bois vert, multi-couteaux pour les tailles mélangées. Livraison France et Allemagne.',
+    },
+    de: {
+      name: 'Häcksler',
+      slug: 'haecksler',
+      description:
+        'Elektro- und Benzin-Häcksler, die Äste und Schnittgut zu Mulch verkleinern. Walzensystem für frisches Holz, Messersystem für gemischtes Material.',
+      metaTitle: 'Gartenhäcksler — Elektro und Benzin',
+      metaDescription:
+        'Gartenhäcksler mit Elektro- oder Benzinmotor: leise Walze für frisches Holz, Messerwalze für gemischtes Schnittgut. Lieferung nach Deutschland und Frankreich.',
+    },
+  },
+  {
     slug: 'outils-motorises',
-    position: 3,
+    position: 5,
     icon: 'tools',
     fr: {
       name: 'Outils motorisés',
@@ -78,7 +124,7 @@ export const CATEGORIES: CategorySeed[] = [
   },
   {
     slug: 'affutage',
-    position: 4,
+    position: 6,
     icon: 'sharpening',
     fr: {
       name: 'Affûtage et entretien',
@@ -101,7 +147,7 @@ export const CATEGORIES: CategorySeed[] = [
   },
   {
     slug: 'accessoires',
-    position: 5,
+    position: 7,
     icon: 'accessories',
     fr: {
       name: 'Accessoires et protection',
