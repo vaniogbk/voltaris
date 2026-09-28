@@ -1,32 +1,65 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="1000" height="750" role="img" aria-label="TORMEK T-8 — Meule 250 mm · 90 tr/min · 230 V">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="100%" stop-color="#F1F1F3"/>
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#EFEFF2"/>
     </linearGradient>
     <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#E1000F"/>
-      <stop offset="100%" stop-color="#E1000F" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#E1000F"/><stop offset="100%" stop-color="#E1000F" stop-opacity="0"/>
     </linearGradient>
+    <linearGradient id="org" x1="0.1" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#FF9233"/><stop offset="45%" stop-color="#EE7203"/>
+      <stop offset="100%" stop-color="#B9550A"/>
+    </linearGradient>
+    <linearGradient id="orgSoft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFA556"/><stop offset="100%" stop-color="#D96A05"/>
+    </linearGradient>
+    <linearGradient id="pale" x1="0.1" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#FDFDFD"/><stop offset="50%" stop-color="#DFE2E5"/>
+      <stop offset="100%" stop-color="#AFB4B9"/>
+    </linearGradient>
+    <linearGradient id="dark" x1="0.1" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#4A4E53"/><stop offset="55%" stop-color="#2E3236"/>
+      <stop offset="100%" stop-color="#1A1C1F"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EDEFF1"/><stop offset="40%" stop-color="#C2C7CC"/>
+      <stop offset="100%" stop-color="#8D9399"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#D8D2C6"/><stop offset="60%" stop-color="#B3AB9C"/>
+      <stop offset="100%" stop-color="#8C8576"/>
+    </linearGradient>
+    <radialGradient id="shade" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#0B0B0C" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0B0B0C" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
   <rect width="1000" height="750" fill="url(#bg)"/>
   <rect x="0" y="0" width="1000" height="6" fill="#E1000F"/>
 
-  <g transform="translate(340 240) scale(1.28)">
-    <rect x="88" y="52" width="144" height="70" rx="12" fill="#3B3D42"/>
-    <ellipse cx="88" cy="87" rx="26" ry="52" fill="#9CA0A7"/>
-    <ellipse cx="232" cy="87" rx="20" ry="42" fill="#9CA0A7" opacity=".7"/>
-    <path d="M120 40 h96" stroke="#9CA0A7" stroke-width="7" stroke-linecap="round"/>
-    <rect x="128" y="76" width="64" height="22" rx="5" fill="#E1000F"/>
+  <!-- Cadrage : le taille-haie est le dessin le plus large (906 px), c'est lui
+       qui fixe l'échelle maximale sans déborder de la tuile. -->
+  <g transform="translate(35 52) scale(1.06)">
+    <ellipse cx="400" cy="396" rx="250" ry="22" fill="url(#shade)"/>
+    <path d="M150 214 h500 q30 0 30 30 v104 q0 30 -30 30 H150 q-30 0 -30 -30 V244 q0 -30 30 -30 z" fill="url(#dark)"/>
+    <path d="M150 214 h500 v26 H150 z" fill="#FFFFFF1A"/>
+    <circle cx="322" cy="216" r="148" fill="url(#stone)"/>
+    <circle cx="322" cy="216" r="148" fill="none" stroke="#7E7768" stroke-width="5"/>
+    <circle cx="322" cy="216" r="34" fill="url(#steel)"/>
+    <circle cx="322" cy="216" r="13" fill="#4A4E53"/>
+    <ellipse cx="560" cy="234" rx="92" ry="92" fill="#B98A5E"/>
+    <ellipse cx="560" cy="234" rx="92" ry="92" fill="none" stroke="#8E6741" stroke-width="5"/>
+    <circle cx="560" cy="234" r="22" fill="url(#steel)"/>
+    <path d="M410 150 h180 q18 0 18 18 t-18 18 H410 z" fill="url(#steel)"/>
+    <path d="M182 266 h120" stroke="#EE7203" stroke-width="12" stroke-linecap="round"/>
   </g>
 
-  <rect x="80" y="452" width="420" height="3" fill="url(#rule)"/>
+  <rect x="80" y="576" width="420" height="3" fill="url(#rule)"/>
 
-  <text x="80" y="424" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4.5" fill="#E1000F">TORMEK</text>
-  <text x="80" y="518" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="56" font-weight="800" letter-spacing="-1" fill="#0B0B0C">T-8</text>
-  <text x="80" y="566" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#74777E">Meule 250 mm · 90 tr/min · 230 V</text>
-  <text x="80" y="612" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="500" fill="#A3A5AB">Visuel provisoire — photo produit à venir</text>
+  <text x="80" y="552" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="4.5" fill="#E1000F">TORMEK</text>
+  <text x="80" y="636" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-1" fill="#0B0B0C">T-8</text>
+  <text x="80" y="682" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="23" font-weight="600" fill="#74777E">Meule 250 mm · 90 tr/min · 230 V</text>
 
-  <text x="80" y="690" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#A3A5AB">VOLTARIS</text>
+  <text x="820" y="682" text-anchor="end" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#A3A5AB">VOLTARIS</text>
 </svg>

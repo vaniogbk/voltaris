@@ -1,30 +1,58 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="1000" height="750" role="img" aria-label="STIHL HP Ultra 1 L — Synthétique · 1:50 · 50 L de mélange">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="100%" stop-color="#F1F1F3"/>
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#EFEFF2"/>
     </linearGradient>
     <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#E1000F"/>
-      <stop offset="100%" stop-color="#E1000F" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#E1000F"/><stop offset="100%" stop-color="#E1000F" stop-opacity="0"/>
     </linearGradient>
+    <linearGradient id="org" x1="0.1" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#FF9233"/><stop offset="45%" stop-color="#EE7203"/>
+      <stop offset="100%" stop-color="#B9550A"/>
+    </linearGradient>
+    <linearGradient id="orgSoft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFA556"/><stop offset="100%" stop-color="#D96A05"/>
+    </linearGradient>
+    <linearGradient id="pale" x1="0.1" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#FDFDFD"/><stop offset="50%" stop-color="#DFE2E5"/>
+      <stop offset="100%" stop-color="#AFB4B9"/>
+    </linearGradient>
+    <linearGradient id="dark" x1="0.1" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#4A4E53"/><stop offset="55%" stop-color="#2E3236"/>
+      <stop offset="100%" stop-color="#1A1C1F"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EDEFF1"/><stop offset="40%" stop-color="#C2C7CC"/>
+      <stop offset="100%" stop-color="#8D9399"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#D8D2C6"/><stop offset="60%" stop-color="#B3AB9C"/>
+      <stop offset="100%" stop-color="#8C8576"/>
+    </linearGradient>
+    <radialGradient id="shade" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#0B0B0C" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0B0B0C" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
   <rect width="1000" height="750" fill="url(#bg)"/>
   <rect x="0" y="0" width="1000" height="6" fill="#E1000F"/>
 
-  <g transform="translate(340 240) scale(1.28)">
-    <path d="M128 46 h64 v14 l18 22 v46 q0 14 -14 14 h-72 q-14 0 -14 -14V82 l18 -22 z" fill="#3B3D42"/>
-    <rect x="142" y="24" width="36" height="24" rx="6" fill="#E1000F"/>
-    <rect x="118" y="88" width="84" height="30" rx="5" fill="#9CA0A7" opacity=".5"/>
+  <!-- Cadrage : le taille-haie est le dessin le plus large (906 px), c'est lui
+       qui fixe l'échelle maximale sans déborder de la tuile. -->
+  <g transform="translate(35 52) scale(1.06)">
+    <ellipse cx="400" cy="400" rx="150" ry="18" fill="url(#shade)"/>
+    <path d="M316 150 h168 v34 l38 52 v164 q0 30 -30 30 H308 q-30 0 -30 -30 V236 l38 -52 z" fill="url(#dark)"/>
+    <rect x="336" y="98" width="128" height="56" rx="14" fill="url(#org)"/>
+    <rect x="300" y="250" width="200" height="104" rx="10" fill="#EE7203"/>
+    <path d="M324 288 h150 M324 320 h110" stroke="#FFFFFFAA" stroke-width="10" stroke-linecap="round"/>
   </g>
 
-  <rect x="80" y="452" width="420" height="3" fill="url(#rule)"/>
+  <rect x="80" y="576" width="420" height="3" fill="url(#rule)"/>
 
-  <text x="80" y="424" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4.5" fill="#E1000F">STIHL</text>
-  <text x="80" y="518" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="56" font-weight="800" letter-spacing="-1" fill="#0B0B0C">HP Ultra 1 L</text>
-  <text x="80" y="566" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#74777E">Synthétique · 1:50 · 50 L de mélange</text>
-  <text x="80" y="612" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="500" fill="#A3A5AB">Visuel provisoire — photo produit à venir</text>
+  <text x="80" y="552" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="4.5" fill="#E1000F">STIHL</text>
+  <text x="80" y="636" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-1" fill="#0B0B0C">HP Ultra 1 L</text>
+  <text x="80" y="682" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="23" font-weight="600" fill="#74777E">Synthétique · 1:50 · 50 L de mélange</text>
 
-  <text x="80" y="690" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#A3A5AB">VOLTARIS</text>
+  <text x="820" y="682" text-anchor="end" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#A3A5AB">VOLTARIS</text>
 </svg>

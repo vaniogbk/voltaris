@@ -1,32 +1,67 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="1000" height="750" role="img" aria-label="STIHL FSA 60 R — Batterie AK · coupe 28 cm · 2,8 kg">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="100%" stop-color="#F1F1F3"/>
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#EFEFF2"/>
     </linearGradient>
     <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#E1000F"/>
-      <stop offset="100%" stop-color="#E1000F" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#E1000F"/><stop offset="100%" stop-color="#E1000F" stop-opacity="0"/>
     </linearGradient>
+    <linearGradient id="org" x1="0.1" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#FF9233"/><stop offset="45%" stop-color="#EE7203"/>
+      <stop offset="100%" stop-color="#B9550A"/>
+    </linearGradient>
+    <linearGradient id="orgSoft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFA556"/><stop offset="100%" stop-color="#D96A05"/>
+    </linearGradient>
+    <linearGradient id="pale" x1="0.1" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#FDFDFD"/><stop offset="50%" stop-color="#DFE2E5"/>
+      <stop offset="100%" stop-color="#AFB4B9"/>
+    </linearGradient>
+    <linearGradient id="dark" x1="0.1" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#4A4E53"/><stop offset="55%" stop-color="#2E3236"/>
+      <stop offset="100%" stop-color="#1A1C1F"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EDEFF1"/><stop offset="40%" stop-color="#C2C7CC"/>
+      <stop offset="100%" stop-color="#8D9399"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#D8D2C6"/><stop offset="60%" stop-color="#B3AB9C"/>
+      <stop offset="100%" stop-color="#8C8576"/>
+    </linearGradient>
+    <radialGradient id="shade" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#0B0B0C" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0B0B0C" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
   <rect width="1000" height="750" fill="url(#bg)"/>
   <rect x="0" y="0" width="1000" height="6" fill="#E1000F"/>
 
-  <g transform="translate(340 240) scale(1.28)">
-    <path d="M40 32 L232 118" stroke="#3B3D42" stroke-width="16" stroke-linecap="round"/>
-    <path d="M96 57 h56" stroke="#9CA0A7" stroke-width="9" stroke-linecap="round"/>
-    <circle cx="248" cy="126" r="30" fill="none" stroke="#9CA0A7" stroke-width="8"/>
-    <circle cx="248" cy="126" r="9" fill="#E1000F"/>
-    <rect x="24" y="20" width="34" height="26" rx="9" fill="#3B3D42"/>
+  <!-- Cadrage : le taille-haie est le dessin le plus large (906 px), c'est lui
+       qui fixe l'échelle maximale sans déborder de la tuile. -->
+  <g transform="translate(35 52) scale(1.06)">
+    <ellipse cx="470" cy="384" rx="250" ry="22" fill="url(#shade)"/>
+    <path d="M118 96 h124 q26 0 26 26 v76 q0 26 -26 26 H118 q-26 0 -26 -26 v-76 q0 -26 26 -26 z" fill="url(#pale)"/>
+    <path d="M138 74 h86 q16 0 16 16 v10 H122 V90 q0 -16 16 -16 z" fill="url(#dark)"/>
+    <path d="M250 176 L560 318" stroke="url(#steel)" stroke-width="26" stroke-linecap="round"/>
+    <path d="M250 176 L560 318" stroke="#FFFFFF44" stroke-width="8" stroke-linecap="round"/>
+    <!-- poignée guidon -->
+    <path d="M318 168 q42 -46 92 -12" fill="none" stroke="url(#dark)" stroke-width="16" stroke-linecap="round"/>
+    <circle cx="316" cy="166" r="14" fill="url(#dark)"/>
+    <!-- carter de protection -->
+    <path d="M498 300 q86 -20 118 54 h-92 z" fill="url(#dark)"/>
+    <!-- tête de coupe -->
+    <circle cx="592" cy="348" r="44" fill="url(#steel)"/>
+    <circle cx="592" cy="348" r="18" fill="#EE7203"/>
+    <path d="M592 348 l86 26 M592 348 l-30 88" stroke="#9CA0A7" stroke-width="5" stroke-linecap="round"/>
   </g>
 
-  <rect x="80" y="452" width="420" height="3" fill="url(#rule)"/>
+  <rect x="80" y="576" width="420" height="3" fill="url(#rule)"/>
 
-  <text x="80" y="424" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4.5" fill="#E1000F">STIHL</text>
-  <text x="80" y="518" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="56" font-weight="800" letter-spacing="-1" fill="#0B0B0C">FSA 60 R</text>
-  <text x="80" y="566" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#74777E">Batterie AK · coupe 28 cm · 2,8 kg</text>
-  <text x="80" y="612" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="500" fill="#A3A5AB">Visuel provisoire — photo produit à venir</text>
+  <text x="80" y="552" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="4.5" fill="#E1000F">STIHL</text>
+  <text x="80" y="636" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-1" fill="#0B0B0C">FSA 60 R</text>
+  <text x="80" y="682" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="23" font-weight="600" fill="#74777E">Batterie AK · coupe 28 cm · 2,8 kg</text>
 
-  <text x="80" y="690" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#A3A5AB">VOLTARIS</text>
+  <text x="820" y="682" text-anchor="end" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#A3A5AB">VOLTARIS</text>
 </svg>

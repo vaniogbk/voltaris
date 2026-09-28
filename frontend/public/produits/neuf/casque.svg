@@ -1,31 +1,61 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="1000" height="750" role="img" aria-label="STIHL ADVANCE X-Vent — EN 397 · visière · SNR 25 dB">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="100%" stop-color="#F1F1F3"/>
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#EFEFF2"/>
     </linearGradient>
     <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#E1000F"/>
-      <stop offset="100%" stop-color="#E1000F" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#E1000F"/><stop offset="100%" stop-color="#E1000F" stop-opacity="0"/>
     </linearGradient>
+    <linearGradient id="org" x1="0.1" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#FF9233"/><stop offset="45%" stop-color="#EE7203"/>
+      <stop offset="100%" stop-color="#B9550A"/>
+    </linearGradient>
+    <linearGradient id="orgSoft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFA556"/><stop offset="100%" stop-color="#D96A05"/>
+    </linearGradient>
+    <linearGradient id="pale" x1="0.1" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#FDFDFD"/><stop offset="50%" stop-color="#DFE2E5"/>
+      <stop offset="100%" stop-color="#AFB4B9"/>
+    </linearGradient>
+    <linearGradient id="dark" x1="0.1" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#4A4E53"/><stop offset="55%" stop-color="#2E3236"/>
+      <stop offset="100%" stop-color="#1A1C1F"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EDEFF1"/><stop offset="40%" stop-color="#C2C7CC"/>
+      <stop offset="100%" stop-color="#8D9399"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#D8D2C6"/><stop offset="60%" stop-color="#B3AB9C"/>
+      <stop offset="100%" stop-color="#8C8576"/>
+    </linearGradient>
+    <radialGradient id="shade" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#0B0B0C" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0B0B0C" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
   <rect width="1000" height="750" fill="url(#bg)"/>
   <rect x="0" y="0" width="1000" height="6" fill="#E1000F"/>
 
-  <g transform="translate(340 240) scale(1.28)">
-    <path d="M62 100 q0 -66 98 -66 t98 66 z" fill="#3B3D42"/>
-    <rect x="52" y="98" width="216" height="16" rx="8" fill="#9CA0A7"/>
-    <path d="M76 114 q84 34 168 0" fill="none" stroke="#E1000F" stroke-width="7" stroke-linecap="round"/>
-    <circle cx="70" cy="76" r="14" fill="#9CA0A7"/><circle cx="250" cy="76" r="14" fill="#9CA0A7"/>
+  <!-- Cadrage : le taille-haie est le dessin le plus large (906 px), c'est lui
+       qui fixe l'échelle maximale sans déborder de la tuile. -->
+  <g transform="translate(35 52) scale(1.06)">
+    <ellipse cx="400" cy="386" rx="220" ry="20" fill="url(#shade)"/>
+    <path d="M196 262 q0 -170 208 -170 t208 170 z" fill="url(#org)"/>
+    <path d="M232 262 q0 -134 172 -134 t172 134 z" fill="#FFFFFF22"/>
+    <rect x="176" y="256" width="456" height="34" rx="17" fill="url(#dark)"/>
+    <path d="M214 294 q190 78 380 0 v26 q-190 74 -380 0 z" fill="url(#steel)" opacity=".75"/>
+    <ellipse cx="192" cy="226" rx="44" ry="56" fill="url(#dark)"/>
+    <ellipse cx="616" cy="226" rx="44" ry="56" fill="url(#dark)"/>
+    <path d="M176 200 q-34 -40 -8 -84" fill="none" stroke="url(#dark)" stroke-width="16" stroke-linecap="round"/>
   </g>
 
-  <rect x="80" y="452" width="420" height="3" fill="url(#rule)"/>
+  <rect x="80" y="576" width="420" height="3" fill="url(#rule)"/>
 
-  <text x="80" y="424" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4.5" fill="#E1000F">STIHL</text>
-  <text x="80" y="518" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="46" font-weight="800" letter-spacing="-1" fill="#0B0B0C">ADVANCE X-Vent</text>
-  <text x="80" y="566" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#74777E">EN 397 · visière · SNR 25 dB</text>
-  <text x="80" y="612" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="500" fill="#A3A5AB">Visuel provisoire — photo produit à venir</text>
+  <text x="80" y="552" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="4.5" fill="#E1000F">STIHL</text>
+  <text x="80" y="636" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="800" letter-spacing="-1" fill="#0B0B0C">ADVANCE X-Vent</text>
+  <text x="80" y="682" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="23" font-weight="600" fill="#74777E">EN 397 · visière · SNR 25 dB</text>
 
-  <text x="80" y="690" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#A3A5AB">VOLTARIS</text>
+  <text x="820" y="682" text-anchor="end" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="#A3A5AB">VOLTARIS</text>
 </svg>
