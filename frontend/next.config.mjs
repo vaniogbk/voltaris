@@ -69,7 +69,20 @@ const nextConfig = {
       },
       {
         source: '/produits/:path*',
-        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+        // Surtout pas `immutable` : ces fichiers gardent le même nom quand
+        // leur contenu change — une illustration remplacée par la photo du
+        // produit, par exemple. Avec un an d'immutabilité, un visiteur déjà
+        // venu ne reverrait jamais la nouvelle image.
+        //
+        // Le navigateur revalide donc toutes les heures, tandis que le CDN
+        // garde une semaine et sert l'ancienne version le temps de récupérer
+        // la nouvelle. Le coût en performance est nul, la mise à jour arrive.
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, s-maxage=604800, stale-while-revalidate=86400',
+          },
+        ],
       },
     ];
   },
