@@ -8,7 +8,7 @@ if (env.STRIPE_SECRET_KEY) {
   client = new Stripe(env.STRIPE_SECRET_KEY, {
     // Version d'API épinglée par le SDK installé : la laisser implicite évite
     // une désynchronisation entre les types et la version réellement appelée.
-    appInfo: { name: 'Stihl Market', version: '1.0.0' },
+    appInfo: { name: 'Voltaris', version: '1.0.0' },
   });
 }
 

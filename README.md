@@ -1,4 +1,4 @@
-# Stihl Market
+# Voltaris
 
 Boutique en ligne de matériel forestier et d'espaces verts — **neuf et occasion** — pour la **France** et l'**Allemagne**.
 
@@ -120,7 +120,7 @@ npm install && npm run dev
 | http://localhost:3000/fr/admin | Back-office |
 | http://localhost:4000/health | Sonde de santé de l'API |
 
-Identifiants administrateur par défaut : `admin@stihl-market.eu` / `ChangeMoi!2026`.
+Identifiants administrateur par défaut : `admin@voltaris.eu` / `ChangeMoi!2026`.
 
 ### Si le port 5432 est déjà occupé
 
@@ -137,11 +137,11 @@ echo "POSTGRES_PORT=5455" > .env
 Si vous disposez déjà d'un PostgreSQL local, créez la base puis renseignez `DATABASE_URL` dans `backend/.env` :
 
 ```bash
-createdb -U postgres stihl_market
+createdb -U postgres voltaris
 ```
 
 ```
-DATABASE_URL="postgresql://postgres:VOTRE_MOT_DE_PASSE@localhost:5432/stihl_market?schema=public"
+DATABASE_URL="postgresql://postgres:VOTRE_MOT_DE_PASSE@localhost:5432/voltaris?schema=public"
 ```
 
 ---
@@ -149,7 +149,7 @@ DATABASE_URL="postgresql://postgres:VOTRE_MOT_DE_PASSE@localhost:5432/stihl_mark
 ## Structure du dépôt
 
 ```
-Stihl Market/
+Voltaris/
 ├── backend/
 │   ├── prisma/
 │   │   ├── schema.prisma          modèle de données complet
@@ -611,7 +611,7 @@ Tant que ce script sort en code 1, ne déployez pas : il liste exactement ce qui
 6. Flux produit déclarés dans Merchant Center : `/feed/fr/products.xml` et `/feed/de/products.xml`
 7. Tâche planifiée quotidienne sur `POST /api/admin/maintenance/release-expired-transfers`
 
-### Sur le nom « Stihl Market »
+### Sur le nom « Voltaris »
 
 STIHL est une marque déposée d'ANDREAS STIHL AG & Co. KG. Revendre des produits STIHL et les désigner par leur marque est licite dans l'Espace économique européen au titre de l'épuisement des droits. **Employer la marque dans le nom de la boutique et dans le nom de domaine est nettement plus exposé** : cela peut être analysé comme un usage à titre d'enseigne suggérant un lien commercial avec le fabricant, ce que le droit des marques n'autorise pas sans accord.
 

@@ -189,7 +189,7 @@ function svg(name, brand, glyphKey, spec) {
   <text x="80" y="566" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="${GREY}">${escape(spec)}</text>
   <text x="80" y="612" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="500" fill="${FAINT}">Visuel provisoire — photo produit à venir</text>
 
-  <text x="80" y="690" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="${FAINT}">STIHL MARKET</text>
+  <text x="80" y="690" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" fill="${FAINT}">VOLTARIS</text>
 </svg>
 `;
 }

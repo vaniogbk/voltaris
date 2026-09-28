@@ -197,7 +197,7 @@ async function importFromCsv(path) {
         // les requêtes sans agent identifiable.
         const response = await fetch(url, {
           redirect: 'follow',
-          headers: { 'User-Agent': 'StihlMarket-PhotoImport/1.0 (+catalogue produit)' },
+          headers: { 'User-Agent': 'Voltaris-PhotoImport/1.0 (+catalogue produit)' },
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
 

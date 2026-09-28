@@ -6,7 +6,7 @@ interface LogoProps {
 }
 
 /**
- * Marque Stihl Market : silhouette de guide-chaîne vue de profil, avec le
+ * Marque Voltaris : silhouette de guide-chaîne vue de profil, avec le
  * pignon de renvoi en rouge. Le motif reste lisible à 20 px de haut, ce qui
  * est la contrainte réelle d'un logo d'en-tête.
  */
@@ -36,7 +36,7 @@ export function Logo({ className, showWordmark = true }: LogoProps) {
       {showWordmark && (
         <span className="flex flex-col leading-none">
           <span className="text-[1.0625rem] font-extrabold tracking-tight text-ink">
-            Stihl<span className="text-signal">Market</span>
+            Volt<span className="text-signal">aris</span>
           </span>
           <span className="mt-0.5 text-[0.5625rem] font-semibold uppercase tracking-[0.16em] text-smoke-500">
             Forst &amp; Garten

@@ -87,7 +87,7 @@ export async function createOrRetrievePaymentIntent(orderId: string) {
       currency: order.currency.toLowerCase(),
       automatic_payment_methods: { enabled: true },
       metadata: { orderId: order.id, orderNumber: order.orderNumber },
-      description: `Stihl Market — commande ${order.orderNumber}`,
+      description: `Voltaris — commande ${order.orderNumber}`,
       receipt_email: order.email,
       shipping: buildStripeShipping(order),
     },

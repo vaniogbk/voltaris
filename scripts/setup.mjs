@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Installation locale de Stihl Market, de bout en bout.
+ * Installation locale de Voltaris, de bout en bout.
  *
  *   node scripts/setup.mjs
  *
@@ -84,7 +84,7 @@ function writeEnv(dir, replacements = {}) {
 
 // ---------------------------------------------------------------- exécution
 
-console.log(`\n${c.bold}Stihl Market — installation locale${c.reset}`);
+console.log(`\n${c.bold}Voltaris — installation locale${c.reset}`);
 console.log(`${c.dim}${ROOT}${c.reset}`);
 
 title('Vérification des prérequis');
@@ -115,7 +115,7 @@ title('Génération des fichiers .env');
   writeEnv(BACKEND, {
     JWT_ACCESS_SECRET: secret(),
     JWT_REFRESH_SECRET: secret(),
-    DATABASE_URL: `postgresql://stihl:stihl@localhost:${dbPort}/stihl_market?schema=public`,
+    DATABASE_URL: `postgresql://stihl:stihl@localhost:${dbPort}/voltaris?schema=public`,
   });
   writeEnv(FRONTEND);
 }
@@ -145,7 +145,7 @@ title('Démarrage de PostgreSQL');
     let ready = false;
     for (let attempt = 0; attempt < 30; attempt++) {
       ready = spawnSync(
-        'docker compose exec -T postgres pg_isready -U stihl -d stihl_market',
+        'docker compose exec -T postgres pg_isready -U stihl -d voltaris',
         { cwd: ROOT, shell: true, stdio: 'ignore' },
       ).status === 0;
       if (ready) break;
@@ -178,7 +178,7 @@ const adminPassword =
   'ChangeMoi!2026';
 const adminEmail =
   readFileSync(resolve(BACKEND, '.env'), 'utf8').match(/^ADMIN_EMAIL="?(.+?)"?$/m)?.[1] ??
-  'admin@stihl-market.eu';
+  'admin@voltaris.eu';
 
 console.log(`
 ${c.green}${c.bold}Installation terminée.${c.reset}

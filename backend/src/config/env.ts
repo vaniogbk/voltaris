@@ -22,14 +22,14 @@ const schema = z.object({
   STRIPE_WEBHOOK_SECRET: z.string().optional(),
 
   // Virement SEPA
-  BANK_ACCOUNT_HOLDER: z.string().default('Stihl Market SAS'),
+  BANK_ACCOUNT_HOLDER: z.string().default('Voltaris SAS'),
   BANK_IBAN: z.string().default('FR7630001007941234567890185'),
   BANK_BIC: z.string().default('BDFEFRPPCCT'),
   BANK_NAME: z.string().default('Banque de démonstration'),
   BANK_TRANSFER_DUE_DAYS: z.coerce.number().default(7),
 
   // Compte administrateur créé par le seed
-  ADMIN_EMAIL: z.string().email().default('admin@stihl-market.eu'),
+  ADMIN_EMAIL: z.string().email().default('admin@voltaris.eu'),
   ADMIN_PASSWORD: z.string().min(8).default('ChangeMoi!2026'),
 
   // Formulaire de contact → Telegram (optionnel).

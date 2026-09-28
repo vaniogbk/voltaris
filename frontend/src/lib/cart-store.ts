@@ -96,7 +96,7 @@ export const useCart = create<CartState>()(
       subtotalCents: () => get().lines.reduce((sum, l) => sum + l.priceCents * l.quantity, 0),
     }),
     {
-      name: 'stihl-market-cart',
+      name: 'voltaris-cart',
       version: 1,
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({ lines: state.lines }),

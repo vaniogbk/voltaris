@@ -1,4 +1,4 @@
-// Stihl Market — schéma PostgreSQL
+// Voltaris — schéma PostgreSQL
 // Marchés : France (fr) et Allemagne (de). Livraison uniquement, pas de retrait.
 
 generator client {

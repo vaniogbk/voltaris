@@ -40,7 +40,7 @@ export const COMPANY: Company = {
   /** Raison sociale exacte, telle qu'inscrite au registre */
   legalName: '',
   /** Nom commercial affiché aux clients */
-  tradeName: 'Stihl Market',
+  tradeName: 'Voltaris',
   /** SAS, SARL, EURL, GmbH… */
   legalForm: '',
   /** Capital social en euros, sans le symbole. Laissez vide si non applicable. */

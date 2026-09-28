@@ -3,24 +3,24 @@
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: stihl-market-db
+    container_name: voltaris-db
     restart: unless-stopped
     environment:
       POSTGRES_USER: stihl
       POSTGRES_PASSWORD: stihl
-      POSTGRES_DB: stihl_market
+      POSTGRES_DB: voltaris
     ports:
       # Si un PostgreSQL est déjà installé sur la machine, il occupe le 5432.
       # Définissez POSTGRES_PORT=5433 dans le .env à la racine et reportez le
       # même port dans DATABASE_URL (backend/.env).
       - '${POSTGRES_PORT:-5432}:5432'
     volumes:
-      - stihl-market-pgdata:/var/lib/postgresql/data
+      - voltaris-pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U stihl -d stihl_market']
+      test: ['CMD-SHELL', 'pg_isready -U stihl -d voltaris']
       interval: 5s
       timeout: 5s
       retries: 10
 
 volumes:
-  stihl-market-pgdata:
+  voltaris-pgdata:

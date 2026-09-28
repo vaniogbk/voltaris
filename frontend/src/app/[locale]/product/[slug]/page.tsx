@@ -282,7 +282,7 @@ function Breadcrumb({ locale, product }: { locale: Locale; product: ProductDetai
 }
 
 function ProductSchema({ product, locale }: { product: ProductDetail; locale: Locale }) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://stihl-market.eu';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://voltaris.eu';
   const url = `${siteUrl}${path(locale, 'product', product.slug)}`;
 
   const schema = {

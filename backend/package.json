@@ -1,8 +1,8 @@
 {
-  "name": "stihl-market-api",
+  "name": "voltaris-api",
   "version": "1.0.0",
   "private": true,
-  "description": "API Stihl Market - boutique d'equipements de jardinage motorises (FR/DE)",
+  "description": "API Voltaris - boutique d'equipements de jardinage motorises (FR/DE)",
   "type": "module",
   "engines": {
     "node": ">=20"

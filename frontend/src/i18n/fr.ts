@@ -1,8 +1,8 @@
 export const fr = {
   meta: {
-    siteName: 'Stihl Market',
+    siteName: 'Voltaris',
     tagline: 'Matériel forestier et espaces verts — neuf et occasion',
-    homeTitle: 'Stihl Market — tronçonneuses, débroussailleuses et outils motorisés',
+    homeTitle: 'Voltaris — tronçonneuses, débroussailleuses et outils motorisés',
     homeDescription:
       "Spécialiste du matériel forestier et d'espaces verts. Tronçonneuses, débroussailleuses, outils motorisés et accessoires, neufs et occasions contrôlées. Livraison en France et en Allemagne.",
   },
@@ -270,7 +270,7 @@ export const fr = {
     logout: 'Se déconnecter',
     login: {
       title: 'Connexion',
-      subtitle: 'Accès au back-office Stihl Market.',
+      subtitle: 'Accès au back-office Voltaris.',
       email: 'Adresse e-mail',
       password: 'Mot de passe',
       submit: 'Se connecter',
@@ -343,7 +343,7 @@ export const fr = {
     publishedProducts: 'Produits en ligne',
     lowStock: 'Stock faible',
     recentOrders: 'Dernières commandes',
-    noAccess: 'Cette section est réservée à l’équipe Stihl Market.',
+    noAccess: 'Cette section est réservée à l’équipe Voltaris.',
     confirmTransfer: 'Encaisser le virement',
     ship: 'Marquer comme expédiée',
     trackingNumber: 'Numéro de suivi',
@@ -425,7 +425,7 @@ export const fr = {
   },
 
   footer: {
-    aboutTitle: 'Stihl Market',
+    aboutTitle: 'Voltaris',
     aboutBody:
       'Revendeur indépendant de matériel forestier et d’espaces verts, neuf et occasion. Livraison en France métropolitaine et en Allemagne.',
     shopTitle: 'Boutique',
@@ -439,7 +439,7 @@ export const fr = {
     paymentMethods: 'Paiement sécurisé par carte ou virement SEPA',
     rights: 'Tous droits réservés.',
     disclaimer:
-      'Stihl Market est un revendeur indépendant. Les marques citées appartiennent à leurs propriétaires respectifs et sont utilisées à des fins de description des produits proposés.',
+      'Voltaris est un revendeur indépendant. Les marques citées appartiennent à leurs propriétaires respectifs et sont utilisées à des fins de description des produits proposés.',
   },
 
   common: {

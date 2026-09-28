@@ -186,7 +186,7 @@ function Section({
 
 function OrganizationSchema({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://stihl-market.eu';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://voltaris.eu';
 
   const schema = {
     '@context': 'https://schema.org',

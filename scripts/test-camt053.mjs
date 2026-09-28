@@ -17,7 +17,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const API = process.env.API_URL ?? 'http://localhost:4000';
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? 'admin@stihl-market.eu';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? 'admin@voltaris.eu';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? 'ChangeMoi!2026';
 
 const c = { reset: '\x1b[0m', bold: '\x1b[1m', dim: '\x1b[2m', red: '\x1b[31m', green: '\x1b[32m', yellow: '\x1b[33m' };

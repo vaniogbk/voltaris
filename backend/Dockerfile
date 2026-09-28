@@ -1,4 +1,4 @@
-# Image de production pour l'API Stihl Market.
+# Image de production pour l'API Voltaris.
 # Railway détecte ce Dockerfile automatiquement s'il est présent ; sinon
 # Nixpacks utilise les scripts build/start du package.json, ce qui fonctionne
 # tout aussi bien.

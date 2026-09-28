@@ -2,9 +2,9 @@ import type { Dictionary } from './fr';
 
 export const de: Dictionary = {
   meta: {
-    siteName: 'Stihl Market',
+    siteName: 'Voltaris',
     tagline: 'Forst- und Gartentechnik — neu und gebraucht',
-    homeTitle: 'Stihl Market — Kettensägen, Freischneider und Motorgeräte',
+    homeTitle: 'Voltaris — Kettensägen, Freischneider und Motorgeräte',
     homeDescription:
       'Spezialist für Forst- und Gartentechnik. Kettensägen, Freischneider, Motorgeräte und Zubehör, neu und geprüft gebraucht. Lieferung nach Deutschland und Frankreich.',
   },
@@ -428,7 +428,7 @@ export const de: Dictionary = {
   },
 
   footer: {
-    aboutTitle: 'Stihl Market',
+    aboutTitle: 'Voltaris',
     aboutBody:
       'Unabhängiger Händler für Forst- und Gartentechnik, neu und gebraucht. Lieferung nach Deutschland und Frankreich.',
     shopTitle: 'Shop',
@@ -442,7 +442,7 @@ export const de: Dictionary = {
     paymentMethods: 'Sichere Zahlung per Karte oder SEPA-Überweisung',
     rights: 'Alle Rechte vorbehalten.',
     disclaimer:
-      'Stihl Market ist ein unabhängiger Händler. Genannte Marken gehören ihren jeweiligen Inhabern und werden ausschließlich zur Beschreibung der angebotenen Produkte verwendet.',
+      'Voltaris ist ein unabhängiger Händler. Genannte Marken gehören ihren jeweiligen Inhabern und werden ausschließlich zur Beschreibung der angebotenen Produkte verwendet.',
   },
 
   common: {

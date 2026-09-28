@@ -8,7 +8,7 @@ const app = createApp();
 const server = app.listen(env.PORT, () => {
   logger.info(
     { port: env.PORT, env: env.NODE_ENV, stripe: env.stripeEnabled ? 'actif' : 'désactivé' },
-    'API Stihl Market démarrée',
+    'API Voltaris démarrée',
   );
 });
 

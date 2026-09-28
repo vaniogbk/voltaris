@@ -25,7 +25,7 @@ export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
 }
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://stihl-market.eu';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://voltaris.eu';
 
 export async function generateMetadata({
   params,

@@ -1,5 +1,5 @@
 /**
- * Seed Stihl Market.
+ * Seed Voltaris.
  *
  * Idempotent : chaque exécution met à jour les enregistrements existants
  * (clé : sku pour les produits, slug pour les catégories) plutôt que de
@@ -21,7 +21,7 @@ const prisma = new PrismaClient();
 
 const DEFAULT_ADMIN_PASSWORD = 'ChangeMoi!2026';
 
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? 'admin@stihl-market.eu';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? 'admin@voltaris.eu';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? DEFAULT_ADMIN_PASSWORD;
 
 async function seedAdmin() {
@@ -44,7 +44,7 @@ async function seedAdmin() {
       email: ADMIN_EMAIL.toLowerCase(),
       passwordHash,
       firstName: 'Admin',
-      lastName: 'Stihl Market',
+      lastName: 'Voltaris',
       role: 'ADMIN',
       locale: 'fr',
       country: 'FR',
@@ -209,7 +209,7 @@ async function seedProduct(seed: ProductSeed, categoryIds: Map<string, string>) 
 }
 
 async function main() {
-  console.log('\nSeed Stihl Market\n' + '─'.repeat(40));
+  console.log('\nSeed Voltaris\n' + '─'.repeat(40));
 
   await seedAdmin();
   await seedShippingRates();

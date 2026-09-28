@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://stihl-market.eu';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://voltaris.eu';
 
 export default function robots(): MetadataRoute.Robots {
   // Un environnement de préproduction ne doit jamais être indexé.

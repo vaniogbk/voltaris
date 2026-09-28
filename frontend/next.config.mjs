@@ -41,7 +41,7 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       // Autorise un CDN d'images distant si vous en configurez un plus tard.
-      { protocol: 'https', hostname: '**.stihl-market.eu' },
+      { protocol: 'https', hostname: '**.voltaris.eu' },
     ],
   },
 

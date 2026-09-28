@@ -38,7 +38,7 @@ function formatMessage(input: ContactMessage): string {
   const flag = input.locale === 'de' ? '🇩🇪' : '🇫🇷';
 
   const lines = [
-    `<b>🔔 Nouveau message — Stihl Market</b> ${flag}`,
+    `<b>🔔 Nouveau message — Voltaris</b> ${flag}`,
     '',
     `<b>De :</b> ${escapeHtml(input.name)}`,
     `<b>E-mail :</b> ${escapeHtml(input.email)}`,

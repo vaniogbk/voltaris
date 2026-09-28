@@ -1,8 +1,8 @@
 {
-  "name": "stihl-market",
+  "name": "voltaris",
   "version": "1.0.0",
   "private": true,
-  "description": "Stihl Market — boutique en ligne de matériel forestier et d'espaces verts (France et Allemagne)",
+  "description": "Voltaris — boutique en ligne de matériel forestier et d'espaces verts (France et Allemagne)",
   "engines": {
     "node": ">=20"
   },

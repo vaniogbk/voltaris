@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 /**
- * Charte Stihl Market : noir / blanc / rouge.
+ * Charte Voltaris : noir / blanc / rouge.
  * Le rouge est réservé aux actions et aux informations commerciales fortes
  * (prix cassés, CTA, badges). Il ne sert jamais de couleur de fond de section :
  * son efficacité vient de sa rareté.
