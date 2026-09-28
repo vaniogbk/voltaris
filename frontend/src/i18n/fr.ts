@@ -136,7 +136,12 @@ export const fr = {
 
   checkout: {
     title: 'Commande',
-    steps: { contact: 'Contact', delivery: 'Livraison', payment: 'Paiement' },
+    steps: {
+      contact: 'Contact',
+      delivery: 'Livraison',
+      payment: 'Paiement',
+      confirmation: 'Confirmation',
+    },
     contact: {
       title: 'Vos coordonnées',
       email: 'Adresse e-mail',
@@ -170,8 +175,33 @@ export const fr = {
       terms: 'J’ai lu et j’accepte les conditions générales de vente.',
       note: 'Note pour la préparation (facultatif)',
       submitCard: 'Payer {amount}',
-      submitTransfer: 'Valider la commande',
+      submitTransfer: 'Valider — l’IBAN s’affiche à l’étape suivante',
       processing: 'Traitement en cours…',
+    },
+
+    // Le virement est irréversible : le client doit savoir, avant de
+    // valider, ce qui se passe ensuite et quand.
+    timeline: {
+      title: 'Ce qui se passe après validation',
+      nowTitle: 'Tout de suite',
+      nowBody:
+        'Votre numéro de commande s’affiche, avec l’IBAN et un QR code à scanner depuis votre application bancaire. Rien n’est débité à cette étape.',
+      transferTitle: 'À vous de jouer',
+      transferBody:
+        'Vous effectuez le virement en indiquant le numéro de commande en référence. C’est lui qui permet de rapprocher votre paiement.',
+      prepareTitle: '1 à 2 jours ouvrés',
+      prepareBody:
+        'Dès réception du virement, la machine est contrôlée, emballée et remise au transporteur.',
+      shipTitle: 'Puis 2 à 4 jours ouvrés',
+      shipBody:
+        'Livraison par DPD. Vous suivez l’acheminement depuis la page de suivi, avec votre numéro de commande et votre e-mail.',
+    },
+    guarantees: {
+      title: 'Ce qui est garanti',
+      warranty: 'Garantie 2 ans sur le neuf, 3 à 6 mois sur l’occasion',
+      withdrawal: '14 jours pour changer d’avis (art. L221-18)',
+      shipping: 'Livraison offerte en France et en Allemagne',
+      checked: 'Machines contrôlées pièce par pièce avant expédition',
     },
     summary: {
       title: 'Récapitulatif',
@@ -454,6 +484,7 @@ export const fr = {
     of: 'sur',
     close: 'Fermer',
     required: 'Champ obligatoire',
+    inProgress: 'étape en cours',
     optional: 'facultatif',
     yes: 'Oui',
     no: 'Non',

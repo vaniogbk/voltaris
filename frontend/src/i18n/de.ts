@@ -139,7 +139,12 @@ export const de: Dictionary = {
 
   checkout: {
     title: 'Kasse',
-    steps: { contact: 'Kontakt', delivery: 'Versand', payment: 'Zahlung' },
+    steps: {
+      contact: 'Kontakt',
+      delivery: 'Versand',
+      payment: 'Zahlung',
+      confirmation: 'Bestätigung',
+    },
     contact: {
       title: 'Ihre Kontaktdaten',
       email: 'E-Mail-Adresse',
@@ -173,8 +178,31 @@ export const de: Dictionary = {
       terms: 'Ich habe die Allgemeinen Geschäftsbedingungen gelesen und akzeptiere sie.',
       note: 'Hinweis zur Bearbeitung (optional)',
       submitCard: '{amount} bezahlen',
-      submitTransfer: 'Bestellung abschließen',
+      submitTransfer: 'Bestellen — IBAN im nächsten Schritt',
       processing: 'Wird verarbeitet…',
+    },
+
+    timeline: {
+      title: 'Was nach dem Absenden passiert',
+      nowTitle: 'Sofort',
+      nowBody:
+        'Ihre Bestellnummer erscheint, zusammen mit IBAN und einem QR-Code für Ihre Banking-App. In diesem Schritt wird nichts abgebucht.',
+      transferTitle: 'Ihr Schritt',
+      transferBody:
+        'Sie überweisen und geben die Bestellnummer als Verwendungszweck an. Darüber wird Ihre Zahlung zugeordnet.',
+      prepareTitle: '1 bis 2 Werktage',
+      prepareBody:
+        'Nach Zahlungseingang wird die Maschine geprüft, verpackt und dem Versanddienstleister übergeben.',
+      shipTitle: 'Dann 2 bis 4 Werktage',
+      shipBody:
+        'Zustellung per DPD. Den Weg verfolgen Sie über die Sendungsverfolgung mit Bestellnummer und E-Mail-Adresse.',
+    },
+    guarantees: {
+      title: 'Was garantiert ist',
+      warranty: '2 Jahre Garantie auf Neugeräte, 3 bis 6 Monate auf Gebrauchtmaschinen',
+      withdrawal: '14 Tage Widerrufsrecht (§ 355 BGB)',
+      shipping: 'Versandkostenfrei nach Deutschland und Frankreich',
+      checked: 'Jede Maschine vor dem Versand Stück für Stück geprüft',
     },
     summary: {
       title: 'Übersicht',
@@ -457,6 +485,7 @@ export const de: Dictionary = {
     of: 'von',
     close: 'Schließen',
     required: 'Pflichtfeld',
+    inProgress: 'aktueller Schritt',
     optional: 'optional',
     yes: 'Ja',
     no: 'Nein',

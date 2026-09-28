@@ -6,6 +6,12 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { CreditCard, Landmark, Lock, ShoppingBag } from 'lucide-react';
 import { StripePaymentPanel } from './StripePaymentPanel';
+import {
+  CheckoutSteps,
+  GuaranteeBand,
+  PaymentTimeline,
+  type CheckoutStep,
+} from './CheckoutReassurance';
 import { useCart } from '@/lib/cart-store';
 import { useAuth } from '@/components/AuthProvider';
 import { apiFetch, ApiError, type CartQuote } from '@/lib/api';
@@ -180,6 +186,20 @@ export function CheckoutView({ locale }: { locale: Locale }) {
     }
   }
 
+  // La commande tient sur une page : l'étape affichée suit donc le
+  // remplissage. Tant que la livraison est incomplète, on est à « Livraison » ;
+  // dès qu'elle l'est, le fil passe à « Paiement », juste en dessous.
+  const deliveryDone =
+    email.trim().length > 3 &&
+    Boolean(
+      shipping.firstName.trim() &&
+        shipping.lastName.trim() &&
+        shipping.line1.trim() &&
+        shipping.postalCode.trim() &&
+        shipping.city.trim(),
+    );
+  const step: CheckoutStep = payment ? 'payment' : deliveryDone ? 'payment' : 'delivery';
+
   const returnUrl =
     typeof window !== 'undefined' && payment
       ? `${window.location.origin}${path(locale, 'checkout')}/confirmation/${payment.orderNumber}?email=${encodeURIComponent(email.trim())}`
@@ -188,6 +208,8 @@ export function CheckoutView({ locale }: { locale: Locale }) {
   return (
     <div className="container-page py-8 lg:py-12">
       <h1 className="text-3xl font-bold tracking-tight text-ink">{t.checkout.title}</h1>
+
+      <CheckoutSteps locale={locale} current={step} />
 
       <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_22rem]">
         <div>
@@ -339,6 +361,12 @@ export function CheckoutView({ locale }: { locale: Locale }) {
                   </span>
                 </label>
               </section>
+
+              {/* Le virement engage l'acheteur sans retour possible : la suite
+                  doit être connue avant de valider, pas découverte après. */}
+              {method === 'BANK_TRANSFER' && <PaymentTimeline locale={locale} />}
+
+              <GuaranteeBand locale={locale} />
 
               {(error || quoteError) && (
                 <p
